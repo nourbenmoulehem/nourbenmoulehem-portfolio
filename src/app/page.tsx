@@ -1,59 +1,38 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import Navbar from "./components/navbar";
-import ParallaxSection from "./ParallaxSection";
-
 
 import Hero from "./sections/hero";
 import About from "./sections/about/About";
+import Projects from "./sections/projects/Projects";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen justify-center items-center">
+      <Navbar />
 
-        <Navbar />
+      <main className="text-white">
+        {/* Hero Section */}
+        <section className="section-layout  ">
+          <Hero />
+        </section>
 
+        {/* Section 2 - About Me */}
+        <section className="h-screen flex items-start justify-center text-4xl">
+          <About />
+        </section>
 
-      <main className="text-white" >
-            {/* Hero Section */}
-              <section className="section-layout  ">
-                
-                <Hero />
-                  
-              </section>
+        {/* Section 3 - Projects */}
+        <section className="project-section">
+          <Projects />
+        </section>
 
-
-            {/* Parallax Section 1 - Background Image */}
-            {/* <ParallaxSection speed={-150}>
-                
-            </ParallaxSection> */}
-
-            {/* Section 2 - About Me */}
-            <section className="h-screen flex items-start justify-center text-4xl">
-            <About />
-            </section>
-
-            {/* Parallax Section 2 - Floating Text */}
-            <ParallaxSection speed={-100} className="text-6xl font-bold">
-                <span>Scroll Magic ✨</span>
-            </ParallaxSection>
-
-            {/* Section 3 - Projects */}
-            <section className="h-screen flex items-center justify-center text-4xl">
-                My Projects
-            </section>
-
-            {/* Parallax Section 3 - Background */}
-            <ParallaxSection speed={-120}>
-                <img src="/parallax2.jpg" alt="Parallax 2" className="w-full h-full object-cover opacity-60" />
-            </ParallaxSection>
-
-            {/* Section 4 - Contact */}
-            <section className="h-screen flex items-center justify-center text-4xl">
-                Contact Me
-            </section>
-        </main>
+        {/* Section 4 - Contact */}
+        <section className="h-screen flex items-center justify-center text-4xl">
+          Contact Me
+        </section>
+      </main>
 
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center text-white">
         <a

@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --font-oxanium: 'Oxanium', sans-serif;
+  --font-oxanium: "Oxanium", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -12,7 +14,6 @@ body {
   font-family: var(--font-oxanium);
 }
 
-
 .section-layout {
   height: 100vh;
   width: 100vw;
@@ -20,8 +21,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-
 
 /* waving hand */
 @keyframes wave-animation {
@@ -59,9 +58,187 @@ body {
   display: inline-block;
 }
 
-
 .name {
-  background: linear-gradient(to right, #8A2BE2, #DA2C9D); /* Neon purple shades */
+  background: linear-gradient(
+    to right,
+    #8a2be2,
+    #da2c9d
+  ); /* Neon purple shades */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* .project-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} */
+
+/* Project section css */
+
+.cardContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0px;
+  padding: 50px;
+}
+
+.card {
+    display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-around;
+
+  position: relative;
+
+  height: 100%;
+
+  width: 100%;
+
+  border-radius: 25px;
+
+  padding: 50px;
+
+  transform-origin: top;
+}
+
+.cardTitle {
+  text-align: center;
+
+  margin: 0px;
+
+  font-size: 28px;
+}
+
+.cardBody {
+  display: flex;
+
+
+  justify-content: space-between;
+
+  height: 100%;
+
+  margin-top: 50px;
+
+
+  gap: 50px;
+}
+
+.cardDescription {
+  width: 40%;
+
+  position: relative;
+
+  top: 10%;
+}
+
+.pDescription {
+  font-size: 16px;
+
+  &::first-letter {
+    font-size: 28px;
+
+    font-family: "Title";
+  }
+}
+
+.cardLink {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.cardLink a {
+  font-size: 12px;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+.imageContainer {
+  position: relative;
+
+  width: 60%;
+
+  height: 100%;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+}
+
+.phoneFrame {
+  width: 250px; /* Default mobile width */
+  height: 444px; /* 9:16 aspect ratio */
+  border-radius: 30px; /* Smooth rounded corners */
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+  border: 5px solid #000; /* Optional black border for a phone effect */
+  position: relative;
+  display: block;
+}
+
+/* Responsive scaling for larger screens */
+@media (min-width: 640px) {
+  .phoneFrame {
+    width: 300px;
+    height: 533px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phoneFrame {
+    width: 350px;
+    height: 622px;
+  }
+}
+.inner {
+  width: 100%;
+
+  height: 100%;
+}
+
+img {
+  object-fit: cover;
+}
+
+/* Responsive adjustments */
+/* @media (max-width: 1200px) {
+  .card {
+    width: 800px;
+    height: 400px;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .card {
+    width: 600px;
+    height: 300px;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 400px;
+    height: 250px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 300px;
+    height: 200px;
+    padding: 15px;
+  }
+} */

@@ -34,55 +34,55 @@ const internshipData: InternshipEntry[] = [
 
 const About: React.FC = () => (
   <div className="flex flex-col h-full w-full m-9">
-    <section className="flex flex-row items-center justify-between w-full gap-8">
-      {/* About Me Section - Larger */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="bg-primary/5 border border-border rounded-xl p-8 md:p-10 lg:p-12 w-3/5 text-center shadow-lg"
-      >
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-4xl font-bold text-white mb-6"
-        >
-          About Me
-        </motion.h1>
+    <section className="flex flex-col md:flex-row items-center justify-between w-full gap-8">
+  {/* About Me Section - Larger */}
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.1 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+    className="bg-primary/5 border border-border rounded-xl p-8 md:p-10 lg:p-12 w-full md:w-3/5 text-center shadow-lg"
+  >
+    <motion.h1
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      viewport={{ once: true }}
+      className="text-4xl font-bold text-white mb-6"
+    >
+      About Me
+    </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-lg text-gray-300 leading-relaxed"
-        >
-          A software engineering student at ESPRIT with a bachelor's degree from
-          ISTIC. My journey into technology started with curiosity and has
-          evolved into a deep love for software development, cloud computing,
-          and DevOps. I specialize in full-stack development, working with
-          TypeScript, Next.js, Spring Boot, and cloud technologies to craft
-          scalable applications.
-          <br />
-          <br />
-          My passion lies in Cloud & DevOps, Open Source contributions, and
-          Building Scalable Apps. I'm on a mission to bridge development and
-          cloud by mastering AWS, containerization, and automation, with
-          the ultimate goal of becoming a cloud-focused software engineer.
-          If you're into tech, open source, or DevOps, feel free to reach out!
-        </motion.p>
-      </motion.div>
+    <motion.p
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+      viewport={{ once: true }}
+      className="text-lg text-gray-300 leading-relaxed"
+    >
+      A software engineering student at ESPRIT with a bachelor's degree from
+      ISTIC. My journey into technology started with curiosity and has
+      evolved into a deep love for software development, cloud computing,
+      and DevOps. I specialize in full-stack development, working with
+      TypeScript, Next.js, Spring Boot, and cloud technologies to craft
+      scalable applications.
+      <br />
+      <br />
+      My passion lies in Cloud & DevOps, Open Source contributions, and
+      Building Scalable Apps. I'm on a mission to bridge development and
+      cloud by mastering AWS, containerization, and automation, with
+      the ultimate goal of becoming a cloud-focused software engineer.
+      If you're into tech, open source, or DevOps, feel free to reach out!
+    </motion.p>
+  </motion.div>
 
-      {/* Render Model - Smaller */}
-      <div className="w-2/5 h-full flex justify-center items-center">
-        <RenderModel className="w-full h-full">
-          <Paimon />
-        </RenderModel>
-      </div>
-    </section>
+  {/* Render Model - Smaller */}
+  <div className="w-full md:w-2/5 h-full hidden md:flex justify-center items-center">
+    <RenderModel className="w-full h-full">
+      <Paimon />
+    </RenderModel>
+  </div>
+</section>
 
     <section className="flex flex-row gap-6 justify-evenly items-center w-full">
       <section className="py-12 w-full flex flex-col items-center">

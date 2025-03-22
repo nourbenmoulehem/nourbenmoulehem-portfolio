@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Oxanium , Poppins } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/navbar";
 
 const oxanium = Oxanium({
   subsets: ['latin'],
@@ -32,7 +33,7 @@ export default function RootLayout({
         {/* Radial gradient background */}
         <div className=" top-0 left-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] fixed"></div>
         
-        {/* Main content */}
+        <Navbar />
         {children}
       </body>
     </html>

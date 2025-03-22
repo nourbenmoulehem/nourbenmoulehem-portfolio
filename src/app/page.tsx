@@ -6,25 +6,27 @@ import Navbar from "./components/navbar";
 import Hero from "./sections/hero";
 import About from "./sections/about/About";
 import Projects from "./sections/projects/Projects";
+import AboutV2 from "./sections/about/AboutV2";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen justify-center items-center">
-      <Navbar />
+    <div >
+      
 
-      <main className="text-white">
+      <main className="text-white relative">
         {/* Hero Section */}
-        <section className="section-layout  ">
+        <section id = "hero">
           <Hero />
         </section>
 
         {/* Section 2 - About Me */}
-        <section className="h-screen flex items-start justify-center text-4xl">
+        <section id = "about">
           <About />
+          {/* <AboutV2 /> */}
         </section>
 
         {/* Section 3 - Projects */}
-        <section className="project-section">
+        <section id="projects" >
           <Projects />
         </section>
 

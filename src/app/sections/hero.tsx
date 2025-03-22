@@ -7,7 +7,7 @@ import Setup from "../components/3d-models/Setup";
 
 const Hero: React.FC = () => {
   return (
-    <div className=" flex flex-col md:flex-row items-center text-center p-4 md:text-left h-screen w-screen">
+    <div className="relative flex flex-col md:flex-row items-center text-center p-4 md:text-left h-screen w-screen">
       {/* Left Panel (Text) */}
       
       <div className=" w-full md:w-1/2 flex flex-col items-center justify-center md:items-start p-4">

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { useState } from "react"; 
 import { Menu, X } from "lucide-react"; // Icons for mobile menu
@@ -6,7 +8,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 left-0 z-50 w-full bg-white/30 backdrop-blur-md text-white px-6 md:px-8 py-4 m-4 rounded-3xl"> 
+    <nav className="bg-background/60 backdrop-blur-lg py-4 p-4   sticky top-0 z-50 text-white"> 
 
       <div className="w-full flex justify-between items-center">
         {/* Logo or Brand Name */}

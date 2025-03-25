@@ -7,6 +7,7 @@ import Hero from "./sections/hero";
 import About from "./sections/about/About";
 import Projects from "./sections/projects/Projects";
 import AboutV2 from "./sections/about/AboutV2";
+import ContactForm from "./sections/contact/Contact";
 
 export default function Home() {
   return (
@@ -31,8 +32,8 @@ export default function Home() {
         </section>
 
         {/* Section 4 - Contact */}
-        <section className="h-screen flex items-center justify-center text-4xl">
-          Contact Me
+        <section className="contacts">
+          <ContactForm />
         </section>
       </main>
 

@@ -13,7 +13,7 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('/model-3d/setup.glb')
   return (
     <group {...props} dispose={null}
-    scale={[0.4, 0.4, 0.4]}>
+    scale={[0.4, 0.4, 0.4]} rotation={[0, -Math.PI/2, 0]} >
       <mesh
         castShadow
         receiveShadow

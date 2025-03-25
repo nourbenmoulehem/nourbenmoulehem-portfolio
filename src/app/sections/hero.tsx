@@ -1,4 +1,4 @@
-import * as motion from "motion/react-client"
+import { motion } from "framer-motion";
 
 import { FaCloud, FaSearch } from 'react-icons/fa';
 import { Typewriter } from "react-simple-typewriter";
@@ -13,12 +13,13 @@ const Hero: React.FC = () => {
       <div className=" w-full md:w-1/2 flex flex-col items-center justify-center md:items-start p-4">
 
       <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-                duration: 0.4,
-                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-            }}>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{
+    duration: 0.5,
+    ease: "easeOut",
+  }}
+>
         <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold bg-clip-text">
           Hi, I'm <span className="name">Nour</span>{" "}
           <span className="inline-block waving-hand">👋</span>
@@ -53,8 +54,8 @@ const Hero: React.FC = () => {
       
 
       {/* Right Panel (3D Model) */}
-      <div className=" w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-4">
-        <RenderModel className="w-full h-full">
+      <div className=" w-full md:w-2/3 h-1/2 md:h-full flex items-center justify-center p-4 overflow-visible">
+        <RenderModel className="w-full h-full overflow-visible">
           <Setup />
         </RenderModel>
       </div>

@@ -27,6 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.174.0/three.core.js" integrity="sha512-UlBnid/liin+EDOXNRQ8HbqF30WPD20uUtvbMzu0yKtBVFb3r1thfp/vR8d2HXuKKaG3MHIcosq5E29oBK4Dfg==" ></script>
+      </head>
       <body
         className={`antialiased ${oxanium.variable} font-oxanium`}
       >

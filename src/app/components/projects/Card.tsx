@@ -1,6 +1,10 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 
 import Image from "next/image";
+
+import { motion, useScroll, useTransform } from "framer-motion";
 
 interface CardProps {
   title: string;
@@ -9,24 +13,53 @@ interface CardProps {
   link: string;
   color: string;
   isMobile?: boolean;
+  index: any;
+  progress: any;
+  range: any;
+  targetScale: any;
 }
 
-function Card({ title, description, src, link, color, isMobile }: CardProps) {
+function Card({ title, description, src, link, color, isMobile, index, progress, range, targetScale }: CardProps) {
+  const container = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end end"], // start when the top of the container reaches the top of the viewport, end when the bottom of the container reaches the bottom of the viewport
+  });
+
+  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]); // imageScale from 1 to 1.1 as the user scrolls 
+
+  const scale = useTransform(progress, range, [1, targetScale]); // scale from 1 to targetScale as the user scrolls
+
+  console.log("index", index);
+
   return (
-    <div className="w-screen h-screen max-lg:min-h-[50vh] overflow-hidden max-md:min-h-[60vh] sticky top-0 p-[50px]"> 
-      <div className="flex md:flex-col justify-around relative rounded-2xl h-full w-full origin-top p-[50px]" style={{backgroundColor: color}}>
+    <div   // top-0
+      ref={container}
+      className="w-screen  h-screen max-lg:min-h-[50vh] overflow-hidden max-md:min-h-[60vh] sticky   p-[50px]"
+      style={{ top: `calc(-5vh + ${index * 25}px)` }}
+    > 
+    {/* bg-glassmorphism bg-gray-900 */}
+      <motion.div className="flex border-2 border-white md:flex-col justify-around relative rounded-2xl h-full w-full origin-top p-[50px]  shadow-lg backdrop-blur-md"
+        style={{scale, backgroundColor: "#1E1C2F"}}>
         <h2 className="cardTitle">{title}</h2>
 
-          
         <div className="h-full mt-[50px] gap-[50px] flex flex-col md:flex-row   ">
-
-        <div className={` ${isMobile ? 'phoneFrame' : 'relative w-full md:w-3/5 h-full rounded-2xl overflow-hidden'}`}>
-            <div className="w-full h-full overflow-hidden rounded-xl border border-border">
-              <Image  fill src={`/projects/${src}`} alt="image" />
-            </div>
-          </div>  
+          <div
+            className={` ${
+              isMobile
+                ? "phoneFrame"
+                : "relative w-full md:w-3/5 h-full rounded-2xl overflow-hidden"
+            }`}
+          >
+            <motion.div style={{scale: imageScale}} className="w-full h-full overflow-hidden rounded-xl border border-border">
+              <Image fill src={`/projects/${src}`} alt="image" />
+            </motion.div>
+          </div>
           <div className="basis-2/6 flex flex-col gap-3 justify-between p-4 max-mobile-sm:p-2 max-mobile-sm:pt-0 relative">
-            <p className="max-mobile-sm:text-md max-mobile-sm:max-h-[20vh] max-mobile-sm:overflow-y-auto max-mobile-sm:text-ellipsis">{description}</p>
+            <p className="max-mobile-sm:text-md max-mobile-sm:max-h-[20vh] max-mobile-sm:overflow-y-auto max-mobile-sm:text-ellipsis">
+              {description}
+            </p>
 
             <span>
               <a href={link} target="_blank">
@@ -47,9 +80,8 @@ function Card({ title, description, src, link, color, isMobile }: CardProps) {
               </svg>
             </span>
           </div>
-          
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

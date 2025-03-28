@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Oxanium , Poppins } from "next/font/google";
+import { Oxanium, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
 
 const oxanium = Oxanium({
-  subsets: ['latin'],
-  variable: '--font-oxanium'
+  subsets: ["latin"],
+  variable: "--font-oxanium",
 });
 
 const poppins = Poppins({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins',
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
-}); 
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,14 +28,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.174.0/three.core.js" integrity="sha512-UlBnid/liin+EDOXNRQ8HbqF30WPD20uUtvbMzu0yKtBVFb3r1thfp/vR8d2HXuKKaG3MHIcosq5E29oBK4Dfg==" ></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.174.0/three.core.js"
+          integrity="sha512-UlBnid/liin+EDOXNRQ8HbqF30WPD20uUtvbMzu0yKtBVFb3r1thfp/vR8d2HXuKKaG3MHIcosq5E29oBK4Dfg=="
+        ></script>
       </head>
-      <body
-        className={`antialiased ${oxanium.variable} font-oxanium`}
-      >
+      <body className={`antialiased ${oxanium.variable} font-oxanium`}>
         {/* Radial gradient background */}
-        <div className=" top-0 left-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] fixed"></div>
-        
+        {/* <div className=" top-0 left-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] fixed"></div> */}
+
+        <div className="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+
+        {/* <div className="fixed inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div> bg-slate-950*/}
+
+        <div className="fixed inset-0  z-[-1]">
+          <div  className="fixed top-0 left-0 right-0 bottom-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+        </div>
+
+        {/* <div className="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div> */}
+
         <Navbar />
         {children}
       </body>

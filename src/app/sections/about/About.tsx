@@ -15,20 +15,20 @@ type InternshipEntry = {
 };
 
 const educationData: EducationEntry[] = [
-  { school: "ISTIC", degree: "Bachelor’s in CS", years: "2020 - 2023" },
-  { school: "ESPRIT", degree: "Software Engineering", years: "2023 - Present" },
+  { school: "ISTIC", degree: "Bachelor’s degree in CS", years: "2022 - 2024" },
+  { school: "ESPRIT", degree: "Software Engineering", years: "2024 - Present" },
 ];
 
 const internshipData: InternshipEntry[] = [
   {
     company: "Attijari Bank",
-    position: "MERN developer",
-    duration: "2 months",
+    position: "MERN developer, summer internship",
+    duration: "June 2023 - August 2023",
   },
   {
     company: "Attijari Bank",
-    position: "Mobile developer",
-    duration: "4 months",
+    position: "Mobile developer, end-of-studies internship",
+    duration: "February 2024 - May 2024",
   },
 ];
 
@@ -40,7 +40,7 @@ const About: React.FC = () => (
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="bg-primary/5 border border-border rounded-xl p-8 w-full text-center shadow-lg"
+      className="  rounded-xl border-2 border-white  p-8 w-full text-center shadow-lg  bg-glassmorphism backdrop-blur-md "
     >
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
@@ -73,6 +73,7 @@ const About: React.FC = () => (
         goal of becoming a cloud-focused software engineer. If you're into tech,
         open source, or DevOps, feel free to reach out!
       </motion.p>
+      
     </motion.div>
 
     {/* Render Model - Smaller */}
@@ -93,7 +94,7 @@ const About: React.FC = () => (
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.3, duration: 0.5 }}
-              className="bg-gray-900 p-4 w-full md:w-4/5 lg:w-3/5 rounded-lg shadow-lg mb-6"
+              className="bg-primary/5 p-4 w-full md:w-4/5 lg:w-3/5 rounded-xl  border border-border shadow-lg mb-6"
             >
               <h3 className="text-xl font-semibold">{edu.school}</h3>
               <p className="text-sm text-gray-400">{edu.degree}</p>
@@ -113,7 +114,7 @@ const About: React.FC = () => (
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.3, duration: 0.5 }}
-              className="bg-gray-900 p-4 w-full md:w-4/5 lg:w-3/5 rounded-lg shadow-lg mb-6"
+              className="bg-primary/5 border border-border p-4 w-full md:w-4/5 lg:w-3/5 rounded-xl shadow-lg mb-6"
             >
               <h3 className="text-xl font-semibold">{int.company}</h3>
               <p className="text-sm text-gray-400">{int.position}</p>

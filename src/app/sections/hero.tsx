@@ -4,8 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 import RenderModel from "../components/RenderModel";
 import Setup from "../components/3d-models/Setup";
 
-import Script from 'next/script';
-
+import Script from "next/script";
 
 // Import Vanta effect dynamically
 import NET from "vanta/dist/vanta.globe.min.js";
@@ -29,9 +28,9 @@ const Hero: React.FC = () => {
           scale: 1.0,
           scaleMobile: 1.0,
           color: 0x804e96, // Set the color of the net (red-orange in this case)
-  backgroundColor: 0x50022,
-  // skyColor: 0xf3966,
-  // cloudColor: 0x334d80
+          backgroundColor: 0x50022,
+          // skyColor: 0xf3966,
+          // cloudColor: 0x334d80
         });
       } catch (error) {
         console.error("Vanta initialization error:", error);
@@ -39,7 +38,6 @@ const Hero: React.FC = () => {
     }
 
     return () => {
-      // Cleanup the Vanta effect when the component unmounts
       if (vantaEffect) vantaEffect.destroy();
     };
   }, []);
@@ -48,16 +46,16 @@ const Hero: React.FC = () => {
     <div
       className="relative flex flex-col md:flex-row items-center text-center p-4 md:text-left h-screen w-screen"
       ref={vantaRef}
-       // This ref should be passed to the element Vanta.js attaches to
+      // This ref should be passed to the element Vanta.js attaches to
     >
       <div>
-    <div id="homepage-background"></div>
-    <Script
-      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
-      strategy="beforeInteractive"
-    />
-    
-    {/* <Script id="script">
+        <div id="homepage-background"></div>
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+          strategy="beforeInteractive"
+        />
+
+        {/* <Script id="script">
       {`VANTA.NET({
       el: "#homepage-background",
       mouseControls: true,
@@ -67,7 +65,7 @@ const Hero: React.FC = () => {
       minWidth: 200.00
     });`}
     </Script> */}
-  </div>
+      </div>
 
       {/* Left Panel (Text) */}
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center md:items-start p-4">

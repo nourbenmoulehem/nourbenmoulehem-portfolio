@@ -28,10 +28,31 @@ interface Project {
 }
 
 function Projects() {
+
+  const container = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
+
+
   return (
-    <div>
+    <div ref={container}>
+      <div className = "flex justify-center items-center">
+        {/* <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold text-white"
+        >
+          Projects
+        </motion.h1> */}
+      </div>
       {projects.map((project, index) => {
-        return <Card key = {index} {...project} />; {/* deconstruct the project */}
+        const targetScale = 1 - ((projects.length - index) * 0.1);
+        return <Card key = {index} index={index} {...project} progress={scrollYProgress} range={[index * 0.25, 1]} targetScale={targetScale}/>; {/* deconstruct the project */}
       })}
 
       {/* <ParallaxStack projects={projects as Project[]} /> */}

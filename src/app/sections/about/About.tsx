@@ -1,6 +1,6 @@
-import RenderModel from "@/app/components/RenderModel";
+// import RenderModel from "@/app/components/RenderModel";
 import { motion } from "framer-motion";
-import Paimon from "@/app/components/3d-models/Paimon";
+// import Paimon from "@/app/components/3d-models/Paimon";
 
 type EducationEntry = {
   school: string;
@@ -59,21 +59,16 @@ const About: React.FC = () => (
         viewport={{ once: true }}
         className="text-lg text-gray-300 leading-relaxed"
       >
-        A software engineering student at ESPRIT with a bachelor's degree from
-        ISTIC. My journey into technology started with curiosity and has evolved
-        into a deep love for software development, cloud computing, and DevOps.
-        I specialize in full-stack development, working with TypeScript,
-        Next.js, Spring Boot, and cloud technologies to craft scalable
-        applications.
-        <br />
-        <br />
-        My passion lies in Cloud & DevOps, Open Source contributions, and
-        Building Scalable Apps. I'm on a mission to bridge development and cloud
-        by mastering AWS, containerization, and automation, with the ultimate
-        goal of becoming a cloud-focused software engineer. If you're into tech,
-        open source, or DevOps, feel free to reach out!
+        I'm Nour, a software engineering student with a strong foundation in web
+        and mobile development, artificial intelligence, and
+        accessibility-focused solutions. With experience in React Native, Spring
+        Boot, and PostgreSQL, as well as MERN stack development, I am passionate
+        about building efficient and scalable applications. I have a strong
+        interest in machine learning, cloud computing, and always striving to
+        expand my expertise in these fields. I am constantly seeking
+        opportunities to grow, innovate, and contribute to impactful projects
+        while embracing challenges that push me forward.
       </motion.p>
-      
     </motion.div>
 
     {/* Render Model - Smaller */}

@@ -8,6 +8,7 @@ import About from "./sections/about/About";
 import Projects from "./sections/projects/Projects";
 import AboutV2 from "./sections/about/AboutV2";
 import ContactForm from "./sections/contact/Contact";
+import ProjectSection from "./sections/projects/ProjectsV2";
 
 export default function Home() {
   return (
@@ -28,7 +29,8 @@ export default function Home() {
 
         {/* Section 3 - Projects */}
         <section id="projects" >
-          <Projects />
+          {/* <Projects /> */}
+          <ProjectSection />
         </section>
 
         {/* Section 4 - Contact */}

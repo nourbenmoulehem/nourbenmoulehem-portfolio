@@ -34,38 +34,48 @@ function Card({ title, description, src, link, color, isMobile, index, progress,
   console.log("index", index);
 
   return (
-    <div   // top-0
+    <div 
       ref={container}
-      className="w-screen  h-screen max-lg:min-h-[50vh] overflow-hidden max-md:min-h-[60vh] sticky   p-[50px]"
+      className="w-screen min-h-screen max-lg:min-h-[60vh] max-md:min-h-[70vh] overflow-hidden sticky p-6 sm:p-8 md:p-12"
       style={{ top: `calc(-5vh + ${index * 25}px)` }}
-    > 
-    {/* bg-glassmorphism bg-gray-900 */}
-      <motion.div className="flex border-2 border-white md:flex-col justify-around relative rounded-2xl h-full w-full origin-top p-[50px]  shadow-lg backdrop-blur-md"
-        style={{scale, backgroundColor: "#1E1C2F"}}>
-        <h2 className="cardTitle">{title}</h2>
-
-        <div className="h-full mt-[50px] gap-[50px] flex flex-col md:flex-row   ">
+    >
+      <motion.div 
+        className="flex flex-col border-2 border-white justify-between rounded-2xl h-[900px] md:h-[800px] w-full p-6 sm:p-8 md:p-12 shadow-lg backdrop-blur-md "
+        style={{ scale, backgroundColor: "#1E1C2F" }}
+      >
+        <h2 className="cardTitle text-xl sm:text-2xl">{title}</h2>
+  
+        <div className="h-full  mt-[50px] gap-[50px] flex flex-col md:flex-row w-full">
+          {/* Image Container with Fixed Height */}
           <div
-            className={` ${
-              isMobile
-                ? "phoneFrame"
-                : "relative w-full md:w-3/5 h-full rounded-2xl overflow-hidden"
+            className={`relative ${
+              isMobile ? "phoneFrame" : "w-full md:w-3/5 h-full rounded-2xl overflow-hidden"
             }`}
           >
-            <motion.div style={{scale: imageScale}} className="w-full h-full overflow-hidden rounded-xl border border-border">
-              <Image fill src={`/projects/${src}`} alt="image" />
+            <motion.div 
+              style={{ scale: imageScale || 1 }} 
+              className="w-full h-full overflow-hidden rounded-xl border border-border"
+            >
+              <Image 
+                className="w-full h-full object-cover"
+                fill 
+                src={`/projects/${src}`} 
+                alt="image" 
+              />
             </motion.div>
           </div>
-          <div className="basis-2/6 flex flex-col gap-3 justify-between p-4 max-mobile-sm:p-2 max-mobile-sm:pt-0 relative">
-            <p className="max-mobile-sm:text-md max-mobile-sm:max-h-[20vh] max-mobile-sm:overflow-y-auto max-mobile-sm:text-ellipsis">
+          
+          {/* Text Container with Fixed Height */}
+          <div className="basis-3/6 flex flex-col gap-3 justify-between p-4 sm:p-2 sm:pt-0 h-full w-full ">
+            <p className="text-xl  max-h-[60vh] w-full overflow-y-auto">
               {description}
             </p>
-
+  
             <span>
-              <a href={link} target="_blank">
+              <a href={link} target="_blank" className="text-blue-400 hover:underline">
                 See more
               </a>
-
+  
               <svg
                 width="22"
                 height="12"
@@ -84,6 +94,9 @@ function Card({ title, description, src, link, color, isMobile, index, progress,
       </motion.div>
     </div>
   );
+  
+  
+  
 }
 
 export default Card;

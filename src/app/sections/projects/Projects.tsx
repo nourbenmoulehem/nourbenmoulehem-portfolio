@@ -14,9 +14,9 @@ import { projects } from "./data";
 import React from "react";
 import { div } from "motion/react-client";
 
-import  Card  from "@/app/components/projects/Card";
+import  Card  from "@/components/projects/CardV2";
 
-import  ParallaxStack  from "@/app/components/projects/CardV2";
+import  ParallaxStack  from "@/components/projects/ParallaxStack";
 
 interface Project {
   title: string;
@@ -50,10 +50,10 @@ function Projects() {
           Projects
         </motion.h1> */}
       </div>
-      {projects.map((project, index) => {
+      {/* {projects.map((project, index) => {
         const targetScale = 1 - ((projects.length - index) * 0.1);
-        return <Card key = {index} index={index} {...project} progress={scrollYProgress} range={[index * 0.25, 1]} targetScale={targetScale}/>; {/* deconstruct the project */}
-      })}
+        return <Card key = {index} index={index} {...project} progress={scrollYProgress} range={[index * 0.25, 1]} targetScale={targetScale}/>; deconstruct the project
+      })} */}
 
       {/* <ParallaxStack projects={projects as Project[]} /> */}
     </div>

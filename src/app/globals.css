@@ -176,15 +176,17 @@ body {
 }
 
 .phoneFrame {
-  width: 250px; /* Default mobile width */
-  height: 444px; /* 9:16 aspect ratio */
-  border-radius: 30px; /* Smooth rounded corners */
+  width: 250px;
+  height: 450px;
+  /* border-radius: 30px; */
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
-  border: 5px solid #000; /* Optional black border for a phone effect */
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 5px solid #000; */
   position: relative;
-  display: block;
+  overflow: hidden;
+
 }
+
 
 /* Responsive scaling for larger screens */
 @media (min-width: 640px) {

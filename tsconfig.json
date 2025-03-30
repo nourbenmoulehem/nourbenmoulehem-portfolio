@@ -23,6 +23,6 @@
       "@/*": ["./src/app/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/3d-models/Paimon.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/3d-models/Paimon.jsx", "src/app/components/skills/Balls.tsx"],
   "exclude": ["node_modules"]
 }

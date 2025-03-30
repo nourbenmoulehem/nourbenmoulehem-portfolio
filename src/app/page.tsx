@@ -9,6 +9,10 @@ import Projects from "./sections/projects/Projects";
 import AboutV2 from "./sections/about/AboutV2";
 import ContactForm from "./sections/contact/Contact";
 import ProjectSection from "./sections/projects/ProjectsV2";
+import { Section } from "lucide-react";
+import {Tech} from "@/components/skills/Tech";
+
+import SocialIcons from "@/components/SocialIcons"; 
 
 export default function Home() {
   return (
@@ -33,14 +37,19 @@ export default function Home() {
           <ProjectSection />
         </section>
 
+        {/* <Section  id="skills">
+          <Tech />
+          </Section> */}
+
         {/* Section 4 - Contact */}
         <section className="contacts">
           <ContactForm />
         </section>
       </main>
 
+
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center text-white">
-        <a
+        {/* <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
           target="_blank"
@@ -84,7 +93,8 @@ export default function Home() {
             height={16}
           />
           what else →
-        </a>
+        </a> */}
+        <SocialIcons />
       </footer>
     </div>
   );

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Oxanium, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
+import { Toaster } from "@/components/Toaster";
+
+
 
 const oxanium = Oxanium({
   subsets: ["latin"],
@@ -37,6 +40,8 @@ export default function RootLayout({
         {/* Radial gradient background */}
         {/* <div className=" top-0 left-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] fixed"></div> */}
 
+
+
         <div className="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
 
         {/* <div className="fixed inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div> bg-slate-950*/}
@@ -46,6 +51,8 @@ export default function RootLayout({
         </div>
 
         {/* <div className="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div> */}
+
+        <Toaster />
 
         <Navbar />
         {children}

@@ -31,42 +31,41 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-      <Script
+        <Script
           src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
           strategy="beforeInteractive"
           async
         />
       </head>
-        <body className={`antialiased ${oxanium.variable} font-oxanium`}>
-
+      <body className={`antialiased ${oxanium.variable} font-oxanium `}>
         <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                    disableTransitionOnChange
-                >
-          {/* Radial gradient background */}
-          {/* <div className=" top-0 left-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] fixed"></div> */}
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          
+
+          {/* layering */}
+
+          <div className="fixed inset-0 z-0 bg-[#050022]">
+            {/* Layer 1: Grid Effect */}
+            <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+
+            {/* Layer 2: Radial Gradient with Transparency */}
+            <div className="absolute inset-0 z-20 bg-[radial-gradient(125%_125%_at_50%_10%,rgba(0,0,0,0.1)_40%,#63e_100%)]"></div>
+          </div>
 
           
 
-          {/* <div className="fixed inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div> bg-slate-950*/}
+          <div className="relative z-20">
+            <Toaster />
 
-          <div className="fixed inset-0  z-[-1]">
-            <div className="fixed top-0 left-0 right-0 bottom-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+            <Navbar />
+            {children}
           </div>
-
-          <div className="fixed inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
-
-          {/* <div className="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div> */}
-
-          <Toaster />
-
-          <Navbar />
-          {children}
-          </ThemeProvider>
-
-        </body>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

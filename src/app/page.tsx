@@ -42,7 +42,7 @@ export default function Home() {
           </Section> */}
 
         {/* Section 4 - Contact */}
-        <section className="contacts">
+        <section id="contacts" className="contacts">
           <ContactForm />
         </section>
       </main>

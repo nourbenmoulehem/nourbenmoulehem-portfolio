@@ -4,7 +4,6 @@ import { Typewriter } from "react-simple-typewriter";
 import RenderModel from "../components/RenderModel";
 import Setup from "../components/3d-models/Setup";
 
-import Script from "next/script";
 
 // Import Vanta effect dynamically
 import NET from "vanta/dist/vanta.globe.min.js";
@@ -50,10 +49,7 @@ const Hero: React.FC = () => {
     >
       <div>
         <div id="homepage-background"></div>
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
-          strategy="beforeInteractive"
-        />
+        
 
         {/* <Script id="script">
       {`VANTA.NET({

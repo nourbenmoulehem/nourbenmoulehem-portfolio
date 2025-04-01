@@ -85,7 +85,7 @@ const Card: React.FC<CardProps> = ({
       style={{ translateY }}
     >
       <motion.div
-        className={`w-full max-tablet-lg:min-h-[50vh] max-mobile-lg:min-h-[60vh] rounded-2xl overflow-hidden bg-black relative shadow-lg hover:shadow-[0px_5px_20px] hover:shadow-muted border border-border ${project.color} origin-top z-10`}
+        className={`w-full max-tablet-lg:min-h-[50vh] max-mobile-lg:min-h-[60vh] rounded-2xl overflow-hidden bg-[#050022] relative shadow-lg hover:shadow-[0px_5px_20px] hover:shadow-muted border border-border ${project.color} origin-top z-10`}
         style={{ scale }}
       >
         <div className="flex max-mobile-lg:flex-col justify-around w-full relative z-20">

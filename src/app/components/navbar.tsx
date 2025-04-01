@@ -11,6 +11,18 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
+
+    console.log("Scrolling to:", id);
+  console.log("Section found:", document.getElementById(id));
+    e.preventDefault();
+    const section = document.getElementById(id); // Use getElementById instead of querySelector
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+};
+
+
   return (
     <nav className="bg-background/60 backdrop-blur-lg py-4 p-4   sticky top-0 z-50 text-text"> 
 
@@ -20,10 +32,11 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden  md:flex space-x-7 justify-center items-center">
-          <Link href="#home" className="hover:underline">Home</Link>
-          <Link href="#about" className="hover:underline">About</Link>
-          <Link href="#projects" className="hover:underline">Projects</Link>
-          <Link href="#contacts" className="hover:underline">Contact</Link>
+        <Link onClick={e => handleScroll(e, "hero")} href="hero" className="hover:underline">Home</Link>
+
+          <Link onClick={e => handleScroll(e, "about")} href="#about" className="hover:underline">About</Link>
+          <Link href="#projects" onClick={e => handleScroll(e, "projects")}className="hover:underline">Projects</Link>
+          <Link onClick={e => handleScroll(e, "contacts")} href="#contacts" className="hover:underline" >Contact</Link>
           {/* <Link href="/" className="font-semibold hover:underline">Language</Link> */}
           {/* <Link href="/" className="font-semibold hover:underline">Theme</Link> */}
           

@@ -21,7 +21,7 @@ export default function Home() {
 
       <main className="text-white relative">
         {/* Hero Section */}
-        <section id = "hero">
+        <section id = "hero" className="scroll-mt-20">
           <Hero />
         </section>
 

@@ -33,7 +33,7 @@ const internshipData: InternshipEntry[] = [
 ];
 
 const About: React.FC = () => (
-  <div className="relative p-5 flex flex-col h-full w-full items-center ">
+  <div className="relative p-5 flex flex-col h-full w-full items-center">
     {/* About Me Section - Larger */}
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -47,7 +47,7 @@ const About: React.FC = () => (
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         viewport={{ once: true }}
-        className="text-4xl font-bold text-white mb-6"
+        className="text-4xl font-bold mb-6 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent"
       >
         About Me
       </motion.h1>
@@ -57,7 +57,8 @@ const About: React.FC = () => (
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
         viewport={{ once: true }}
-        className="text-lg text-gray-300 leading-relaxed"
+        className="text-lg  leading-relaxed"
+        style={{ color: "var(--text)" }}
       >
         I'm Nour, a software engineering student with a strong foundation in web
         and mobile development, artificial intelligence, and
@@ -81,7 +82,7 @@ const About: React.FC = () => (
     <section className="flex flex-col lg:flex-row  justify-evenly items-center w-full px-4">
       {/* Education Section */}
       <section className="py-12 w-full flex flex-col items-center">
-        <h2 className="text-3xl font-bold text-center mb-6">Education</h2>
+        <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">Education</h2>
         <div className="flex flex-col items-center w-full relative">
           {educationData.map((edu, index) => (
             <motion.div
@@ -90,10 +91,11 @@ const About: React.FC = () => (
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.3, duration: 0.5 }}
               className="bg-primary/5 p-4 w-full md:w-4/5 lg:w-3/5 rounded-xl  border border-border shadow-lg mb-6"
+              
             >
-              <h3 className="text-xl font-semibold">{edu.school}</h3>
-              <p className="text-sm text-gray-400">{edu.degree}</p>
-              <p className="text-xs text-gray-500">{edu.years}</p>
+              <h3 className="text-xl font-semibold bg-gradient-to-r from-[var(--secondary)] to-[var(--primary)] bg-clip-text text-transparent" >{edu.school}</h3>
+              <p className="text-sm " style={{ color: "var(--text)" }}>{edu.degree}</p>
+              <p className="text-xs " style={{ color: "var(--text)" }}>{edu.years}</p>
             </motion.div>
           ))}
         </div>
@@ -101,7 +103,7 @@ const About: React.FC = () => (
 
       {/* Internships Section */}
       <section className="py-12 w-full flex flex-col items-center">
-        <h2 className="text-3xl font-bold text-center mb-6">Internships</h2>
+        <h2 className="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">Internships</h2>
         <div className="flex flex-col items-center w-full relative">
           {internshipData.map((int, index) => (
             <motion.div
@@ -111,9 +113,9 @@ const About: React.FC = () => (
               transition={{ delay: index * 0.3, duration: 0.5 }}
               className="bg-primary/5 border border-border p-4 w-full md:w-4/5 lg:w-3/5 rounded-xl shadow-lg mb-6"
             >
-              <h3 className="text-xl font-semibold">{int.company}</h3>
-              <p className="text-sm text-gray-400">{int.position}</p>
-              <p className="text-xs text-gray-500">{int.duration}</p>
+              <h3 className="text-xl font-semibold bg-gradient-to-r from-[var(--secondary)] to-[var(--primary)] bg-clip-text text-transparent" >{int.company}</h3>
+              <p className="text-sm " style={{ color: "var(--text)" }}>{int.position}</p>
+              <p className="text-xs " style={{ color: "var(--text)" }}>{int.duration}</p>
             </motion.div>
           ))}
         </div>

@@ -85,8 +85,8 @@ const Card: React.FC<CardProps> = ({
       style={{ translateY }}
     >
       <motion.div
-        className={`w-full max-tablet-lg:min-h-[50vh] max-mobile-lg:min-h-[60vh] rounded-2xl overflow-hidden bg-[#050022] relative shadow-lg hover:shadow-[0px_5px_20px] hover:shadow-muted border border-border ${project.color} origin-top z-10`}
-        style={{ scale }}
+        className={`w-full max-tablet-lg:min-h-[50vh] max-mobile-lg:min-h-[60vh] rounded-2xl overflow-hidden  relative shadow-lg hover:shadow-[0px_5px_20px] hover:shadow-muted border border-border  origin-top z-10`}
+        style={{ scale, backgroundColor: "var(--background)" }}
       >
         <div className="flex max-mobile-lg:flex-col justify-around w-full relative z-20">
           {/* Image Section */}
@@ -116,14 +116,16 @@ const Card: React.FC<CardProps> = ({
           {/* Content Section */}
           <div className="basis-2/6 flex flex-col gap-3 justify-between p-4 max-mobile-sm:p-2 max-mobile-sm:pt-0 relative">
             <div>
-              <h2 className="max-mobile-sm:text-2xl">{project.title}</h2>
-              <p className="max-mobile-sm:text-md max-mobile-sm:max-h-[20vh] max-mobile-sm:overflow-y-auto max-mobile-sm:text-ellipsis">
+              <h2 className="max-mobile-sm:text-2xl" style={{ color: "var(--text)" }} >{project.title}</h2>
+              <p className="max-mobile-sm:text-md max-mobile-sm:max-h-[20vh] max-mobile-sm:overflow-y-auto max-mobile-sm:text-ellipsis"
+                style={{ color: "var(--text)" }}>
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.techUsed.map((tech) => (
                   <Badge
                     className="rounded-sm text-sm shadow-lg text-nowrap"
+                    style={{ color: "var(--text)" }}
                     key={tech}
                   >
                     {tech}
@@ -135,24 +137,11 @@ const Card: React.FC<CardProps> = ({
             {/* Buttons Section */}
             <div className="flex gap-2 items-end justify-between">
               <div className="flex gap-2">
-                <Button>
+                <Button style={{ color: "var(--text)" }}>
                   Code
                   <Code className="translate-y-[-2.5px]" />
                 </Button>
-                <Link
-                  href={project.demoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-foreground no-underline"
-                >
-                  <Button
-                    variant="outline"
-                    className="flex items-center font-bold"
-                  >
-                    Demo
-                    <SquareArrowOutUpRight className="translate-y-[-2.5px]" />
-                  </Button>
-                </Link>
+                
               </div>
               {/* <Image
                 src={project.logo}

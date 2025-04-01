@@ -76,7 +76,12 @@ const ProjectSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-4xl font-bold text-white mb-6"
+            className="text-4xl font-bold mb-6 bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent"
+
+
+
+
+
           >
             Projects
           </motion.h1>

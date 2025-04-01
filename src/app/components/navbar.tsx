@@ -12,14 +12,14 @@ export default function Navbar() {
 
 
   return (
-    <nav className="bg-background/60 backdrop-blur-lg py-4 p-4   sticky top-0 z-50 text-white"> 
+    <nav className="bg-background/60 backdrop-blur-lg py-4 p-4   sticky top-0 z-50 text-text"> 
 
       <div className="w-full flex justify-between items-center">
 
         <Link href="/" className="font-semibold text-lg">Nour Ben Moulehem | Portfolio</Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-7">
+        <div className="hidden  md:flex space-x-7 justify-center items-center">
           <Link href="#home" className="hover:underline">Home</Link>
           <Link href="#about" className="hover:underline">About</Link>
           <Link href="#projects" className="hover:underline">Projects</Link>
@@ -48,7 +48,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-text"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}

@@ -1,10 +1,68 @@
 @import "tailwindcss";
 
+/* @import 'tailwindcss/animate';
+
+@plugin 'tailwindcss-animate'; */
+
+
+
+@layer base {
+  :root {
+    --background: #050022;
+
+    --text: #e8ebf8;
+    --primary: #364eb0;
+    
+
+    --secondary: #db8ada;
+    --accent: #d16698;
+    
+    --gradient-start: #3b82f6; 
+  --gradient-end: #a855f7;
+
+    --linearPrimarySecondary: linear-gradient(#4356b1, #4a2664);
+--linearPrimaryAccent: linear-gradient(#4356b1, #8a3790);
+--linearSecondaryAccent: linear-gradient(#4a2664, #8a3790);
+--radialPrimarySecondary: radial-gradient(#4356b1, #4a2664);
+--radialPrimaryAccent: radial-gradient(#4356b1, #8a3790);
+--radialSecondaryAccent: radial-gradient(#4a2664, #8a3790);
+
+  }
+
+  .light {
+    --text: #070a17;
+    --background: #e1dbff;
+    --primary: #4f68c9;
+    --secondary: #752474;
+    --accent: #992e60;
+    --gradiant: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+
+    --gradient-start: #4f46e5; /* Light theme start color */
+  --gradient-end: #9333ea;
+    --linearPrimarySecondary: linear-gradient(#4e60bc, #bf9bd9);
+--linearPrimaryAccent: linear-gradient(#4e60bc, #c26fc8);
+--linearSecondaryAccent: linear-gradient(#bf9bd9, #c26fc8);
+--radialPrimarySecondary: radial-gradient(#4e60bc, #bf9bd9);
+--radialPrimaryAccent: radial-gradient(#4e60bc, #c26fc8);
+--radialSecondaryAccent: radial-gradient(#bf9bd9, #c26fc8);
+
+  }
+}
+
 :root {
   --font-oxanium: "Oxanium", sans-serif;
   margin: 0;
   padding: 0;
 }
+
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #000;  /* This would make the text black */
+}
+
+
 
 body {
   width: 100%;
@@ -57,15 +115,7 @@ body {
   display: inline-block;
 }
 
-.name {
-  background: linear-gradient(
-    to right,
-    #8a2be2,
-    #da2c9d
-  ); /* Neon purple shades */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+
 
 /* .project-section {
   display: flex;

@@ -4,12 +4,17 @@ import { Typewriter } from "react-simple-typewriter";
 import RenderModel from "../components/RenderModel";
 import Setup from "../components/3d-models/Setup";
 
+import { useTheme } from "next-themes";
+
 
 // Import Vanta effect dynamically
 import NET from "vanta/dist/vanta.globe.min.js";
 
 const Hero: React.FC = () => {
   const vantaRef = useRef<HTMLDivElement>(null); // Use a ref for the Vanta container
+
+  const { theme } = useTheme();
+  console.log("🚀 ~ theme:", theme)
 
   useEffect(() => {
     let vantaEffect: any;
@@ -26,10 +31,8 @@ const Hero: React.FC = () => {
           minWidth: 200.0,
           scale: 1.0,
           scaleMobile: 1.0,
-          color: 0x804e96, // Set the color of the net (red-orange in this case)
-          backgroundColor: 0x50022,
-          // skyColor: 0xf3966,
-          // cloudColor: 0x334d80
+          color: 0x804e96, // Color of the globe
+          backgroundColor: theme === "dark" ? 0x050022 : 0xe1dbff, 
         });
       } catch (error) {
         console.error("Vanta initialization error:", error);
@@ -39,28 +42,19 @@ const Hero: React.FC = () => {
     return () => {
       if (vantaEffect) vantaEffect.destroy();
     };
-  }, []);
+  }, [theme]); // Run the effect whenever `theme` changes
 
   return (
     <div
       className="relative flex flex-col md:flex-row items-center text-center p-4 md:text-left h-screen w-screen"
       ref={vantaRef}
-      // This ref should be passed to the element Vanta.js attaches to
+      
     >
       <div>
         <div id="homepage-background"></div>
         
 
-        {/* <Script id="script">
-      {`VANTA.NET({
-      el: "#homepage-background",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00
-    });`}
-    </Script> */}
+       
       </div>
 
       {/* Left Panel (Text) */}
@@ -73,14 +67,14 @@ const Hero: React.FC = () => {
             ease: "easeOut",
           }}
         >
-          <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold bg-clip-text">
-            Hi, I'm <span className="name">Nour</span>{" "}
+          <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold bg-clip-text " style={{ color: "var(--text)" }}>
+            Hi, I'm <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">Nour</span>{" "}
             <span className="inline-block waving-hand">👋</span>
           </h1>
 
-          <p className="text-[clamp(1rem,2.5vw,1.5rem)] leading-relaxed">
+          <p className="text-[clamp(1rem,2.5vw,1.5rem)] leading-relaxed" style={{ color: "var(--text)" }}>
             Software engineering student, and{" "}
-            <span className="text-primary font-bold">I'm a</span>{" "}
+            <span className=" font-bold">I'm a</span>{" "}
             <span className="font-semibold bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
               <Typewriter
                 words={[
@@ -98,7 +92,7 @@ const Hero: React.FC = () => {
             </span>
           </p>
 
-          <p className="text-base md:text-lg text-gray-300 max-w-lg mt-4">
+          <p className="text-base md:text-lg text-gray-300 max-w-lg mt-4" style={{ color: "var(--text)" }}>
             Let me guide you through my journey—where I started, where I am
             today, and where I'm headed. Feel free to reach out!
           </p>

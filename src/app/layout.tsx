@@ -37,7 +37,7 @@ export default function RootLayout({
           async
         />
       </head>
-      <body className={`antialiased ${oxanium.variable} font-oxanium `}>
+      <body className={`antialiased ${poppins.variable} font-poppins `}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

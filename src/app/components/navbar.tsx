@@ -60,6 +60,7 @@ export default function Navbar() {
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
         <div className="md:hidden flex flex-col items-center mt-4 space-y-4">
+          <ThemeToggle />
           {navLinks.map(({ name, id }) => (
             <Link 
               key={id} 
@@ -70,6 +71,7 @@ export default function Navbar() {
               {name}
             </Link>
           ))}
+          <Link href="/Nour_Ben_Moulehem_Resume.pdf" target="_blank" className="hover:underline">Resume</Link>
         </div>
       )}
     </nav>

@@ -1,20 +1,32 @@
 import { motion } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import RenderModel from "../components/RenderModel";
 import Setup from "../components/3d-models/Setup";
 
 import { useTheme } from "next-themes";
 
-
 // Import Vanta effect dynamically
 import NET from "vanta/dist/vanta.globe.min.js";
+import Link from "next/link";
 
 const Hero: React.FC = () => {
   const vantaRef = useRef<HTMLDivElement>(null); // Use a ref for the Vanta container
 
   const { theme } = useTheme();
-  console.log("🚀 ~ theme:", theme)
+  console.log("🚀 ~ theme:", theme);
+
+
+  const handleScroll = useCallback(
+    (e: React.MouseEvent<HTMLElement>, id: string) => {
+      e.preventDefault();
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    },
+    []
+  );
 
   useEffect(() => {
     let vantaEffect: any;
@@ -33,7 +45,7 @@ const Hero: React.FC = () => {
           scaleMobile: 1.0,
           color: 0x804e96, // Color of the globe
           color2: 0x4e60bc, // Color of the lines
-          backgroundColor: theme === "dark" ? 0x050022 : 0xe1dbff, 
+          backgroundColor: theme === "dark" ? 0x050022 : 0xe1dbff,
         });
       } catch (error) {
         console.error("Vanta initialization error:", error);
@@ -49,13 +61,9 @@ const Hero: React.FC = () => {
     <div
       className="relative flex flex-col md:flex-row items-center text-center p-4 md:text-left h-screen w-screen"
       ref={vantaRef}
-      
     >
       <div>
         <div id="homepage-background"></div>
-        
-
-       
       </div>
 
       {/* Left Panel (Text) */}
@@ -68,12 +76,21 @@ const Hero: React.FC = () => {
             ease: "easeOut",
           }}
         >
-          <h1 className="text-[clamp(2rem,5vw,3.5rem)] font-bold bg-clip-text " style={{ color: "var(--text)" }}>
-            Hi, I'm <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">Nour</span>{" "}
+          <h1
+            className="text-[clamp(2rem,5vw,3.5rem)] font-bold bg-clip-text "
+            style={{ color: "var(--text)" }}
+          >
+            Hi, I'm{" "}
+            <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
+              Nour
+            </span>{" "}
             <span className="inline-block waving-hand">👋</span>
           </h1>
 
-          <p className="text-[clamp(1rem,2.5vw,1.5rem)] leading-relaxed" style={{ color: "var(--text)" }}>
+          <p
+            className="text-[clamp(1rem,2.5vw,1.5rem)] leading-relaxed"
+            style={{ color: "var(--text)" }}
+          >
             Software engineering student, and{" "}
             <span className=" font-bold">I'm a</span>{" "}
             <span className="font-semibold bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
@@ -93,10 +110,37 @@ const Hero: React.FC = () => {
             </span>
           </p>
 
-          <p className="text-base md:text-lg text-gray-300 max-w-lg mt-4" style={{ color: "var(--text)" }}>
+          <p
+            className="text-base md:text-lg text-gray-300 max-w-lg mt-4"
+            style={{ color: "var(--text)" }}
+          >
             Let me guide you through my journey—where I started, where I am
             today, and where I'm headed. Feel free to reach out!
           </p>
+          <motion.div className="flex flex-wrap sm:flex-nowrap gap-4 mt-6">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 text-white bg-purple-950 rounded-2xl shadow-lg transition-all"
+              onClick={(e) => handleScroll(e, "contact")} 
+              
+            >
+
+              Get in Touch
+
+              
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto px-4 py-2 sm:px-6 sm:py-3 bg-transparent border-2 border-purple-950 text-purple-950 dark:text-white rounded-2xl shadow-lg transition-all"
+
+              style={{ color: "var(--text)" }}
+            >
+              Get My Resume
+            </motion.button>
+          </motion.div>
         </motion.div>
       </div>
 

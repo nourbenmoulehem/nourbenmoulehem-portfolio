@@ -50,7 +50,17 @@ export default function RootLayout({
 
           <div style={{ backgroundColor: 'var(--background)' }} className="fixed inset-0 z-0">
             {/* Layer 1: Grid Effect */}
-            <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+
+            {/* small grid */}
+            {/* <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div> */}
+
+            {/* large grid */}
+            <div className="absolute inset-0 -z-10 h-full w-full  bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
+
+            {/* dots */}
+            {/* <div className="absolute top-0 -z-10 h-screen w-screen bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div> */}
+
+
 
             {/* Layer 2: Radial Gradient with Transparency */}
             <div className="absolute inset-0 z-20 bg-[radial-gradient(125%_125%_at_50%_10%,rgba(0,0,0,0.1)_40%,#63e_100%)]"></div>

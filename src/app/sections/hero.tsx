@@ -32,6 +32,7 @@ const Hero: React.FC = () => {
           scale: 1.0,
           scaleMobile: 1.0,
           color: 0x804e96, // Color of the globe
+          color2: 0x4e60bc, // Color of the lines
           backgroundColor: theme === "dark" ? 0x050022 : 0xe1dbff, 
         });
       } catch (error) {

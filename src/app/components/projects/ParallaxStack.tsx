@@ -36,7 +36,7 @@ export default function ParallaxStack({ projects }: ParallaxStackProps) {
   });
 
   return (
-    <main ref={containerRef}>
+    <main ref={containerRef} className="px-4 md:px-8 lg:px-16"> {/* Added padding for better responsiveness */}
       {projects.map((project, i) => {
         const targetScale = 1 - (projects.length - i) * 0.03; // Smooth scaling effect
         return (
@@ -85,20 +85,15 @@ const Card: React.FC<CardProps> = ({
       style={{ translateY }}
     >
       <motion.div
-        className={`w-full max-tablet-lg:min-h-[50vh] max-mobile-lg:min-h-[60vh] rounded-2xl overflow-hidden  relative shadow-lg hover:shadow-[0px_5px_20px] hover:shadow-muted border border-border  origin-top z-10`}
+        className="w-full min-h-[60vh] sm:min-h-[50vh] rounded-2xl overflow-hidden relative shadow-lg hover:shadow-[0px_5px_20px] hover:shadow-muted border border-border origin-top z-10"
         style={{ scale, backgroundColor: "var(--background)" }}
       >
-        <div className="flex max-mobile-lg:flex-col justify-around w-full relative z-20">
+        <div className="flex flex-col sm:flex-row justify-around w-full relative z-20 gap-4 p-4">
           {/* Image Section */}
-          <div className="basis-4/6 rounded-3xl p-4 max-mobile-sm:p-2 overflow-hidden flex items-center justify-center ">
+          <div className="sm:basis-4/6 rounded-3xl overflow-hidden flex items-center justify-center">
             {project.isMobile ? (
               <div className="phoneFrame">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={250} 
-                  height={450} 
-                />
+                <Image src={project.image} alt={project.title} width={250} height={450} />
               </div>
             ) : (
               <div className="w-full h-full overflow-hidden rounded-xl border border-border">
@@ -114,20 +109,15 @@ const Card: React.FC<CardProps> = ({
           </div>
 
           {/* Content Section */}
-          <div className="basis-2/6 flex flex-col gap-3 justify-between p-4 max-mobile-sm:p-2 max-mobile-sm:pt-0 relative">
+          <div className="sm:basis-2/6 flex flex-col gap-3 justify-between">
             <div>
-              <h2 className="max-mobile-sm:text-2xl" style={{ color: "var(--text)" }} >{project.title}</h2>
-              <p className="max-mobile-sm:text-md max-mobile-sm:max-h-[20vh] max-mobile-sm:overflow-y-auto max-mobile-sm:text-ellipsis"
-                style={{ color: "var(--text)" }}>
+              <h2 className="text-lg sm:text-2xl" style={{ color: "var(--text)" }}>{project.title}</h2>
+              <p className="text-sm sm:text-md max-h-[20vh] overflow-y-auto text-ellipsis" style={{ color: "var(--text)" }}>
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.techUsed.map((tech) => (
-                  <Badge
-                    className="rounded-sm text-sm shadow-lg text-nowrap"
-                    style={{ color: "var(--text)" }}
-                    key={tech}
-                  >
+                  <Badge className="rounded-sm text-sm shadow-lg text-nowrap" style={{ color: "var(--text)" }} key={tech}>
                     {tech}
                   </Badge>
                 ))}
@@ -141,98 +131,7 @@ const Card: React.FC<CardProps> = ({
                   Code
                   <Code className="translate-y-[-2.5px]" />
                 </Button>
-                
               </div>
-              {/* <Image
-                src={project.logo}
-                alt="project logo"
-                className="absolute right-2 bottom-2 w-20"
-              /> */}
-            </div>
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-};
-
-const MobileProjectCard: React.FC<CardProps> = ({
-  project,
-  progress,
-  range,
-  targetScale,
-}) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const scale = useTransform(progress, range, [1, targetScale]);
-  const translateY = useTransform(progress, [0, 1.5], [20, 15]);
-
-  return (
-    <motion.div
-      ref={cardRef}
-      className="sticky w-full top-20 h-screen"
-      style={{ translateY }}
-    >
-      <motion.div
-        className="w-full min-h-[50vh] max-h-[50vh] rounded-2xl overflow-hidden bg-black relative shadow-lg hover:shadow-[0px_5px_20px] hover:shadow-muted border border-border origin-top z-10"
-        style={{ scale }}
-      >
-        <div className="flex max-mobile-lg:flex-col justify-between w-full relative z-20 h-full">
-          <div className="basis-4/6 rounded-3xl p-4 max-mobile-sm:p-2 overflow-hidden">
-            <div className="phoneFrame">
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={250} // Set to match the .phoneFrame width
-                height={450} // Set to match the .phoneFrame height
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div className="basis-2/6 flex flex-col gap-3 justify-between p-4 max-mobile-sm:p-2 max-mobile-sm:pt-0 relative h-full">
-            <div>
-              <h2 className="max-mobile-sm:text-2xl">{project.title}</h2>
-              <p className="max-mobile-sm:text-md max-mobile-sm:max-h-[20vh] max-mobile-sm:overflow-y-auto max-mobile-sm:text-ellipsis">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.techUsed.map((tech) => (
-                  <Badge
-                    className="rounded-sm text-sm shadow-lg text-nowrap"
-                    key={tech}
-                  >
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-            <div className="flex gap-2 items-end justify-between">
-              <div className="flex gap-2">
-                <Button>
-                  Code
-                  <Code className="translate-y-[-2.5px]" />
-                </Button>
-                {project.demoLink && (
-                  <Link
-                    href={project.demoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground no-underline"
-                  >
-                    <Button
-                      variant="outline"
-                      className="flex items-center font-bold"
-                    >
-                      Demo
-                      <SquareArrowOutUpRight className="translate-y-[-2.5px]" />
-                    </Button>
-                  </Link>
-                )}
-              </div>
-              {/* <Image
-                src={project.logo}
-                alt="project logo"
-                className="absolute right-2 bottom-2 w-20"
-              /> */}
             </div>
           </div>
         </div>

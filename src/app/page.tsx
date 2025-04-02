@@ -1,16 +1,13 @@
 "use client";
 
-import Image from "next/image";
-import Navbar from "./components/navbar";
+
 
 import Hero from "./sections/hero";
 import About from "./sections/about/About";
-import Projects from "./sections/projects/Projects";
-import AboutV2 from "./sections/about/AboutV2";
+
 import ContactForm from "./sections/contact/Contact";
 import ProjectSection from "./sections/projects/ProjectsV2";
-import { Section } from "lucide-react";
-import {Tech} from "@/components/skills/Tech";
+
 
 import SocialIcons from "@/components/SocialIcons"; 
 

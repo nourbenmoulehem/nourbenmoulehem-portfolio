@@ -107,13 +107,7 @@ const Hero: React.FC = () => {
             </span>
           </p>
 
-          <p
-            className="text-base md:text-lg text-gray-300 max-w-lg mt-4"
-            style={{ color: "var(--text)" }}
-          >
-            Let me guide you through my journey—where I started, where I am
-            today, and where I'm headed. Feel free to reach out!
-          </p>
+          
           <motion.div className="flex flex-wrap sm:flex-nowrap gap-4 mt-6">
             <motion.button
               whileHover={{ scale: 1.1 }}

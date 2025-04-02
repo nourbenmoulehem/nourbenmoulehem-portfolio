@@ -11,13 +11,15 @@ import { motion } from "framer-motion";
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
 
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
 
     setLoading(true);
 
-    const response = await fetch("http://192.168.1.10:3000/api/sendEmails", {
+    const response = await fetch(`${apiUrl}/api/sendEmails`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

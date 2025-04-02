@@ -1,20 +1,17 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useCallback } from "react";
 import { Typewriter } from "react-simple-typewriter";
-import RenderModel from "../components/RenderModel";
-import Setup from "../components/3d-models/Setup";
+
 
 import { useTheme } from "next-themes";
 
 // Import Vanta effect dynamically
 import NET from "vanta/dist/vanta.globe.min.js";
-import Link from "next/link";
 
 const Hero: React.FC = () => {
   const vantaRef = useRef<HTMLDivElement>(null); // Use a ref for the Vanta container
 
   const { theme } = useTheme();
-  console.log("🚀 ~ theme:", theme);
 
 
   const handleScroll = useCallback(

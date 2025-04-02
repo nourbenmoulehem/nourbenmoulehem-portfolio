@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
-import { Oxanium, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
 import { Toaster } from "@/components/Toaster";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
 
-const oxanium = Oxanium({
-  subsets: ["latin"],
-  variable: "--font-oxanium",
-});
+
 
 const poppins = Poppins({
   subsets: ["latin"],

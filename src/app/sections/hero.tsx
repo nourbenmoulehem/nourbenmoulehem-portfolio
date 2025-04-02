@@ -130,7 +130,7 @@ const Hero: React.FC = () => {
               
             </motion.button>
               
-            <Link href="https://drive.google.com/file/d/1m8n7G4nt9IwIKhTK9zYBkz9uiL1ry7kb/view?usp=sharing" target="_blank" className="hover:underline">
+            
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -138,9 +138,11 @@ const Hero: React.FC = () => {
 
               style={{ color: "var(--text)" }}
             >
+              <Link href="https://drive.google.com/file/d/1m8n7G4nt9IwIKhTK9zYBkz9uiL1ry7kb/view?usp=sharing" target="_blank" className="hover:underline">
               Get My Resume
+              </Link>
             </motion.button>
-            </Link>
+            
           </motion.div>
         </motion.div>
       </div>

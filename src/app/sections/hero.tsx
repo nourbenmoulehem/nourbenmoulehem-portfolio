@@ -4,15 +4,20 @@ import { Typewriter } from "react-simple-typewriter";
 
 
 import { useTheme } from "next-themes";
+import dynamic from "next/dynamic";
+import Link from "next/link";
 
 // Import Vanta effect dynamically
-import NET from "vanta/dist/vanta.globe.min.js";
+// const NET = dynamic(() => import("vanta/dist/vanta.globe.min.js").then((mod) => mod.default), {
+//   ssr: false,
+// });
 
 const Hero: React.FC = () => {
   const vantaRef = useRef<HTMLDivElement>(null); // Use a ref for the Vanta container
 
   const { theme } = useTheme();
 
+  
 
   const handleScroll = useCallback(
     (e: React.MouseEvent<HTMLElement>, id: string) => {
@@ -28,31 +33,34 @@ const Hero: React.FC = () => {
   useEffect(() => {
     let vantaEffect: any;
 
-    // Make sure the ref is not null
-    if (vantaRef.current) {
-      try {
-        vantaEffect = NET({
-          el: vantaRef.current, // Attach Vanta to the ref
-          // mouseControls: true,
-          // touchControls: true,
-          gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color: 0x804e96, // Color of the globe
-          color2: 0x4e60bc, // Color of the lines
-          backgroundColor: theme === "dark" ? 0x050022 : 0xe1dbff,
-        });
-      } catch (error) {
-        console.error("Vanta initialization error:", error);
+    // Dynamically import Vanta only on the client side
+    const loadVanta = async () => {
+      const NET = (await import("vanta/dist/vanta.globe.min.js")).default;
+      if (vantaRef.current) {
+        try {
+          vantaEffect = NET({
+            el: vantaRef.current,
+            gyroControls: false,
+            minHeight: 200.0,
+            minWidth: 200.0,
+            scale: 1.0,
+            scaleMobile: 1.0,
+            color: 0x804e96,
+            color2: 0x4e60bc,
+            backgroundColor: theme === "dark" ? 0x050022 : 0xe1dbff,
+          });
+        } catch (error) {
+          console.error("Vanta initialization error:", error);
+        }
       }
-    }
+    };
+
+    loadVanta();
 
     return () => {
       if (vantaEffect) vantaEffect.destroy();
     };
-  }, [theme]); // Run the effect whenever `theme` changes
+  }, [theme]);
 
   return (
     <div
@@ -121,7 +129,8 @@ const Hero: React.FC = () => {
 
               
             </motion.button>
-
+              
+            <Link href="https://drive.google.com/file/d/1m8n7G4nt9IwIKhTK9zYBkz9uiL1ry7kb/view?usp=sharing" target="_blank" className="hover:underline">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -131,6 +140,7 @@ const Hero: React.FC = () => {
             >
               Get My Resume
             </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

@@ -5,18 +5,14 @@ import { motion } from "motion/react";
 import projectImage from "@/assets/images/projects/1.png";
 import projectImage2 from "@/assets/images/projects/2.png";
 import projectImage3 from "@/assets/images/projects/3.png";
-import projectImage4 from "@/assets/images/projects/4.png";
-import projectImage5 from "@/assets/images/projects/5.png";
-import { StaticImageData } from "next/image"; // Correct type for static images
 
-// import projects from './Projects';
+import { StaticImageData } from "next/image"; 
 
-// // Define the type for a project
 interface Project {
   id: number;
   title: string;
   description: string;
-  image: StaticImageData; // Use StaticImageData for imported images
+  image: StaticImageData; 
   color: string;
   techUsed: string[];
   demoLink: string;
@@ -28,38 +24,38 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "ParcelPop - Smart Parcel Delivery",
+    title: "WeBank Monitoring Application",
     description:
-      "ParcelPop is a secure and efficient parcel delivery platform that integrates advanced authentication and role-based access control. It allows users to send, track, and receive packages seamlessly, with a dedicated dashboard for managing orders.",
+      "An interactive dashboards to track user engagement metrics, providing valuable insights into user behavior. I implemented JWT-based authorization to ensure secure access to user data and enhance application security. Additionally, I designed a role-based access control system, tailoring user experiences based on their roles. To improve communication within the platform, I integrated a real-time chat system. The project was built using the MERN stack (MongoDB, ExpressJS, ReactJS, Node.js), leveraging modern web technologies for scalability and efficiency.",
     image: projectImage,
     color: "bg-card",
-    techUsed: ["React js", "Node js", "Mongodb", "Mongoose", "Express js"],
-    demoLink: "https://parcelpop-project.web.app/",
-    codeLink: "",
+    techUsed: ["React js", "Node js", "Mongodb", "Mongoose", "Express js", "Material UI"],
+    demoLink: "",
+    codeLink: "https://github.com/nourbenmoulehem/monitoring-app.git",
     isMobile: false,
   },
   {
     id: 2,
-    title: "Weatherium - Live Weather Updates",
+    title: "Inclusa - E-learning Platform",
     description:
-      "Weatherium is a real-time weather forecasting application that provides users with up-to-date weather conditions, temperature, humidity, wind speed, and more. It features a sleek UI, location-based weather updates, and supports multiple cities worldwide.",
+      "Web and desktop e-learning application. The main role of this app is to deliver an inclusive learning experience for people with hearing impairments, so they can learn and communicate with their peers. The app features a chat system, a video conferencing system, and a real-time Sign-Language detection. The app is built using JavaFX for the desktop version and Symfony for the web version.",
     image: projectImage2,
     color: "bg-card",
-    techUsed: ["React js", "Open Weather Api"],
-    demoLink: "https://weatherium.amanillah.com/",
-    codeLink: "",
+    techUsed: ["JavaFx", "Symfony", "MySQL", "ML"],
+    demoLink: "",
+    codeLink: "https://github.com/nourbenmoulehem/JAVA-PIDEV-3A22-CODALLICA",
     isMobile: false,
   },
   {
     id: 3,
-    title: "TalkMates - Connect, Learn, and Grow",
+    title: "WeBank - Accessible mobile banking",
     description:
-      "TalkMates is an online tutor booking platform that connects learners with expert tutors worldwide. It offers personalized learning experiences, flexible scheduling, secure payments, and global networking to help users enhance their skills in various subjects and languages. 🚀",
+      "Engineered an accessible mobile application adhering to WCAG guidelines, leading to a 20% increase in user accessibility scores during testing. The project involved developing the app with React Native, Spring Boot, and PostgreSQL, integrating a BERT-based intent recognition model to create a virtual assistant for users with disabilities. Additionally, I built an administration interface using React and Spring Boot to streamline client request management. Collaborating with the Ibsar Association, I gained valuable insights into accessibility and conducted usability tests with a visually impaired user. To enhance performance and scalability, I implemented Redux for state management. Throughout the project, I followed the Scrum methodology and utilized Notion for task management, ensuring an efficient workflow. This project served as my end-of-studies internship, focusing on inclusive and user-friendly banking solutions.",
     image: projectImage3,
     color: "bg-card",
-    techUsed: ["React js", "Node Js", "Mongodb", "Express js"],
-    demoLink: "https://ph-a11.web.app/",
-    codeLink: "",
+    techUsed: ["React Native", "Spring Boot", "PostgreSQL", "BERT", "Redux"],
+    demoLink: "",
+    codeLink: "https://github.com/nourbenmoulehem/AssistiveBanking-RN",
     isMobile: true,
   },
   
@@ -92,16 +88,7 @@ const ProjectSection: React.FC = () => {
           <ParallaxStack projects={projects} />
         </div>
 
-        {/* Gradient Blur Effect */}
-        <div className="absolute top-0 inset-0 blur-[120px] -z-10">
-          <div
-            style={{
-              clipPath:
-                "polygon(0% 90.5%, 36.75% 77.5%, 73.07% 74.24%, 100% 68.25%, 92.28% 77.5%, 100% 100%, 87.37% 79.84%, 75% 75%, 57.48% 85.62%, 32.25% 58.25%, 32.25% 90.5%)",
-            }}
-            className="sticky top-0 h-[100vh] w-full object-cover -z-10 bg-gradient-to-r from-primary/60 to-destructive/50"
-          />
-        </div>
+        
       </Section>
     </div>
   );

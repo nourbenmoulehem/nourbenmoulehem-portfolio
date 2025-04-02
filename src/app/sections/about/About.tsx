@@ -40,7 +40,7 @@ const About: React.FC = () => (
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="  rounded-xl border-2 border-white  p-8 w-full text-center shadow-lg  bg-glassmorphism backdrop-blur-md "
+      className="  rounded-xl border-2 border-white  p-8 w-full text-center shadow-lg "
     >
       <motion.h1
         initial={{ opacity: 0, y: 20 }}

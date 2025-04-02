@@ -60,33 +60,28 @@ const About: React.FC = () => (
         className="text-lg  leading-relaxed"
         style={{ color: "var(--text)" }}
       >
-        I’ve always been baffled by the invisible systems that power our
-        world—how lines of code can solve real-world problems and bring ideas to
-        life. This fascination led me to software engineering, and my journey
+        I've always been mesmerized by how computers work since I was a kid.
+        This fascination led me to software engineering, and my journey
         officially began after graduating high school when I enrolled at ISTIC.
-        During my first year at university, I dived into the world of data
-        structures through CS50. The course helped me grasp core computer
-        science principles that became the building blocks of everything I would
-        learn after. I then jumped into web development and got my first real
-        taste of documentation and project workflows through The Odin Project.
-        These experiences were like puzzle pieces, slowly coming together to
-        form the bigger picture of software engineering. But it wasn’t just
-        about theory—I wanted to see how everything fit into the real world.
-        That’s when my internships at Attijari Bank became a game-changer. I was
-        able to work alongside like minded engineers and contribute to
-        developing web and mobile applications. It wasn’t just about writing
-        code; it was about creating solutions with real-world impact, all while
-        adhering to SCRUM methodology and best practices. Then came my
-        end-of-studies internship, where I had the privilege of developing a
-        mobile banking app with accessibility features for visually impaired
-        users. Seeing that app in action, helping users navigate their financial
-        tasks independently, was an unforgettable moment that reaffirmed why I
-        chose this path. Now, as I continue my studies at ESPRIT, I’m diving
-        deeper into DevOps, machine learning, and cloud computing. With AWS
-        certifications on the way, I’m excited to further shape my skills and
-        find opportunities to contribute to impactful projects. I’m looking for
-        the next challenge that will allow me to build meaningful solutions that
-        truly make a difference.
+        ISTIC was my portal to the world of data structures. The courses helped
+        me grasp core computer science principles that became the essence of
+        everything I would learn after. I then jumped into web development and
+        got my first real taste of documentation and project workflows through
+        The Odin Project. These experiences really shaped me, slowly coming
+        together to form the bigger picture of software engineering. But it
+        wasn't just about self-learning—I wanted to see how everything works in
+        the real world. That's when my internships at Attijari Bank became the
+        catalysts. I was able to work alongside like-minded engineers and
+        contribute to developing web and mobile applications. It wasn't just
+        about writing code; it was about creating solutions with real-world
+        impact. Then came my end-of-studies internship, where I had the
+        privilege of developing a mobile banking app with accessibility features
+        for visually impaired users. Seeing the app in action, helping users
+        navigate their financial tasks independently, was an unforgettable
+        moment that reaffirmed why I chose this path. Now, as I continue my
+        studies at ESPRIT, I'm diving deeper into DevOps, machine learning, and
+        cloud computing. I'm looking for the next challenge that will allow me
+        to build meaningful solutions that truly make a difference.
       </motion.p>
     </motion.div>
 

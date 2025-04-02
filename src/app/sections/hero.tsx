@@ -1,10 +1,11 @@
+"use client";
+
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useCallback } from "react";
 import { Typewriter } from "react-simple-typewriter";
 
 
 import { useTheme } from "next-themes";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 
 // Import Vanta effect dynamically
@@ -47,7 +48,7 @@ const Hero: React.FC = () => {
             scaleMobile: 1.0,
             color: 0x804e96,
             color2: 0x4e60bc,
-            backgroundColor: theme === "dark" ? 0x050022 : 0xe1dbff,
+            backgroundColor: theme === "dark" ? 0x050022 : theme === "light" ? 0xe1dbff : 0x050022, // Fallback to a default color
           });
         } catch (error) {
           console.error("Vanta initialization error:", error);

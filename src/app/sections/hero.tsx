@@ -139,7 +139,7 @@ const Hero: React.FC = () => {
 
               style={{ color: "var(--text)" }}
             >
-              <Link href="https://drive.google.com/file/d/1C4ZQtVh3fEUJT-eIzbxy7JVS4zRs_jvy/view?usp=sharing" target="_blank" className="hover:underline">
+              <Link href="https://drive.google.com/file/d/1RtClQO3suTThJG4YTi0EiRiTkEiyJ5KN/view?usp=sharing" target="_blank" className="hover:underline">
               Get My Resume
               </Link>
             </motion.button>

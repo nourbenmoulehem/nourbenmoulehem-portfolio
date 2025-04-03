@@ -41,7 +41,7 @@ export default function Navbar() {
             </Link>
           ))}
 
-          <Link href="https://drive.google.com/file/d/1C4ZQtVh3fEUJT-eIzbxy7JVS4zRs_jvy/view?usp=sharing" target="_blank" className="hover:underline">Resume</Link>
+          <Link href="https://drive.google.com/file/d/1RtClQO3suTThJG4YTi0EiRiTkEiyJ5KN/view?usp=sharing" target="_blank" className="hover:underline">Resume</Link>
 
           <ThemeToggle />
         </div>
@@ -70,7 +70,7 @@ export default function Navbar() {
               {name}
             </Link>
           ))}
-          <Link href="https://drive.google.com/file/d/1C4ZQtVh3fEUJT-eIzbxy7JVS4zRs_jvy/view?usp=sharing" target="_blank" className="hover:underline">Resume</Link>
+          <Link href="https://drive.google.com/file/d/1RtClQO3suTThJG4YTi0EiRiTkEiyJ5KN/view?usp=sharing" target="_blank" className="hover:underline">Resume</Link>
         </div>
       )}
     </nav>

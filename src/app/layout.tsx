@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
 import { Toaster } from "@/components/Toaster";
+import ChatWidget from "./components/ChatWidget";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
 
@@ -71,9 +72,9 @@ export default function RootLayout({
 
           <div className="relative z-20">
             <Toaster />
-
             <Navbar />
             {children}
+            <ChatWidget />
           </div>
         </ThemeProvider>
       </body>

@@ -47,7 +47,7 @@ const socialLinks: SocialLink[] = [
         ),
     },
     {
-        href: 'mailto:nour.benmoulehom@istic.ucar.tn',
+        href: 'mailto:benmoulehem.nour@gmail.com',
         icon: (
             <svg
                 xmlns="http://www.w3.org/2000/svg"

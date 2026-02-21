@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
 
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  //const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -19,7 +19,7 @@ export default function ContactForm() {
 
     setLoading(true);
 
-    const response = await fetch(`${apiUrl}/api/sendEmails`, {
+    const response = await fetch(`/api/sendEmails`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,10 +56,10 @@ export default function ContactForm() {
           >
             Or reach out via my e-mail:{" "}
             <a
-              href="mailto:nour.benmoulehom@istic.ucar.tn"
+              href="mailto:benmoulehem.nour@gmail.com"
               className="text-lg font-bold text-secondaryColor duration-300 hover:text-secondaryLight lg:text-xl bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent"
             >
-              nour.benmoulehom@istic.ucar.tn
+              benmoulehem.nour@gmail.com
             </a>
           </p>
           <RenderModel className="w-full  h-fit">
@@ -195,7 +195,7 @@ export default function ContactForm() {
                 style={{ color: "var(--text)" }}
               >
                 {" "}
-                Maintenance{" "}
+                Collaboration{" "}
               </span>
             </label>
           </fieldset>

@@ -98,13 +98,13 @@ const Hero: React.FC = () => {
             style={{ color: "var(--text)" }}
           >
             Software engineering student, and{" "}
-            <span className=" font-bold">I'm a</span>{" "}
+            <span className=" font-bold">I'm </span>{" "}
             <span className="font-semibold bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
               <Typewriter
                 words={[
-                  "Full-Stack Developer.",
-                  "DevOps & Cloud Enthusiast ☁️!",
-                  "Problem Solver & Tech Explorer.",
+                  "a Full-Stack Developer.",
+                  "deploying on Kubernetes & OpenStack.",
+                  "building things that run in production.",
                 ]}
                 loop={0}
                 cursor
@@ -139,7 +139,7 @@ const Hero: React.FC = () => {
 
               style={{ color: "var(--text)" }}
             >
-              <Link href="https://drive.google.com/file/d/1RtClQO3suTThJG4YTi0EiRiTkEiyJ5KN/view?usp=sharing" target="_blank" className="hover:underline">
+              <Link href="/cv/nourbenmoulehem-cv.pdf" target="_blank" className="hover:underline">
               Get My Resume
               </Link>
             </motion.button>

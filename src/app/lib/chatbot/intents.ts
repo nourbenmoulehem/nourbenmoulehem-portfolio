@@ -44,7 +44,7 @@ export const intents: Intent[] = [
       "That's Nour. Developer, engineering student, Linux nerd, and apparently someone who builds chatbots for her portfolio instead of just putting her picture there.",
     ],
     followUp: [
-      "She's based in Tunisia, currently at ESPRIT for Software Engineering. Before that she did a CS Bachelor's at ISTIC. Two Attijari Bank internships, three real projects, one 3D gaming PC in the contact form.",
+      "She's based in Tunisia, currently at ESPRIT for Software Engineering. Before that she did a CS Bachelor's at ISTIC. Three internships (Attijari Bank twice, Enda Tamweel), five real projects including a full private cloud from scratch, one 3D gaming PC in the contact form.",
       "Beyond the resume stuff — she's into DevOps, gaming, and figuring out how things work at the infrastructure level. The kind of developer who reads release notes for fun.",
     ],
   },
@@ -65,13 +65,13 @@ export const intents: Intent[] = [
   // ─── Internship ──────────────────────────────────────────────────────────
   {
     id: 'internship',
-    patterns: ['internship', 'experience', 'attijari', 'bank', 'intern', 'worked', 'professional', 'stage', 'entreprise', 'company', 'job'],
+    patterns: ['internship', 'experience', 'attijari', 'bank', 'intern', 'worked', 'professional', 'stage', 'entreprise', 'company', 'job', 'enda', 'tamweel'],
     responses: [
-      "Two internships at Attijari Bank — MERN developer (June–August 2023), then back as a mobile developer (Feb–May 2024). No she wasn't fired the first time, they actually liked her enough to call back.",
-      "She interned twice at Attijari Bank. First time: built a MERN monitoring dashboard. Second time: built an accessible React Native banking app with a BERT-powered assistant. Different stacks, real impact.",
+      "Three internships total: twice at Attijari Bank (MERN dev 2023, then mobile dev 2024), and most recently at Enda Tamweel (Jul–Aug 2025) building Prospecti — a location-based prospecting app for portfolio managers.",
+      "She's interned three times: Attijari Bank twice (MERN dashboard, then a BERT-powered accessible mobile app), and Enda Tamweel where she built Prospecti with React Native + Spring Boot and set up a GitLab CI/CD pipeline.",
     ],
     followUp: [
-      "First internship was web: MongoDB, Express, React, Node — built a dashboard with JWT auth, role-based access, and real-time chat. Second was mobile: React Native + Spring Boot + BERT for intent recognition. They gave her the harder project the second time, which is a good sign.",
+      "At Attijari Bank: first time was a MERN monitoring dashboard with JWT auth and real-time chat. Second time: React Native + Spring Boot + BERT for intent recognition — harder project, more impact. At Enda Tamweel: she built Prospecti, which adds GPS-based prospecting to replace a paper process, and set up the whole CI/CD pipeline from scratch on a self-hosted runner.",
     ],
   },
 
@@ -80,11 +80,11 @@ export const intents: Intent[] = [
     id: 'projects',
     patterns: ['project', 'built', 'portfolio', 'made', 'created', 'developed', 'application', 'app', 'réalisations', 'projets'],
     responses: [
-      "Three main projects: WeBank Monitoring (MERN dashboard), Inclusa (e-learning for deaf users with sign language detection), and WeBank Mobile (accessible React Native banking app with BERT). Each one progressively harder — she apparently enjoys that.",
-      "The hits: (1) WeBank Monitoring — MERN with JWT and real-time chat. (2) Inclusa — accessible e-learning with actual ML sign language detection. (3) WeBank Mobile — WCAG-compliant, BERT-powered, 20% accessibility improvement. Not bad for an intern.",
+      "Five projects: WeBank Monitoring (MERN dashboard), Inclusa (e-learning for deaf users with sign language detection), WeBank Mobile (accessible React Native banking app with BERT), Prospecti (location-based prospecting app for Enda Tamweel), and a full private cloud built from scratch on OpenStack + Kubernetes. Each one harder than the last.",
+      "The hits: (1) WeBank Monitoring — MERN, JWT, real-time chat. (2) Inclusa — accessible e-learning with ML sign language detection. (3) WeBank Mobile — WCAG-compliant, BERT-powered, 20% accessibility improvement. (4) Prospecti — React Native + Spring Boot + GitLab CI/CD. (5) Private Cloud — 6-node OpenStack + automated k8s + Prometheus/Grafana. Not bad for a student.",
     ],
     followUp: [
-      "If you want details on a specific one, just ask! WeBank (web), Inclusa, or WeBank Mobile — each has a different tech story.",
+      "If you want details on a specific one, just ask! WeBank (web), Inclusa, WeBank Mobile, Prospecti, or the private cloud — each has a different tech story.",
     ],
   },
 
@@ -127,6 +127,19 @@ export const intents: Intent[] = [
     ],
   },
 
+  // ─── Prospecti ───────────────────────────────────────────────────────────
+  {
+    id: 'prospecti',
+    patterns: ['prospecti', 'enda', 'tamweel', 'prospecting', 'prospect', 'gps', 'location', 'fintech', 'microfinance', 'field', 'agent', 'portfolio manager', 'onboarding', 'gitlab', 'ci/cd', 'pipeline', 'runner', 'self-hosted'],
+    responses: [
+      "Prospecti is a mobile app built during her internship at Enda Tamweel (Jul–Aug 2025). It helps portfolio managers find and track potential clients using GPS — replacing a paper-based process with an on-the-go digital workflow. Full stack: React Native + Spring Boot + React Admin.",
+      "Enda Tamweel internship, summer 2025: she built Prospecti, a location-based prospecting app for field agents, and set up a GitLab CI/CD pipeline from scratch on a self-hosted runner for both the Spring Boot backend and React Native frontend. Real DevOps, real fintech impact.",
+    ],
+    followUp: [
+      "The interesting parts: the GPS capture lets agents log a prospect's location on the spot instead of writing it down. The CI/CD pipeline she set up automates the full build and test cycle — build and test stages for both Spring Boot and React Native, running on a self-hosted GitLab runner. That's the kind of infrastructure work most interns don't touch. The app is helping Enda Tamweel modernize their prospecting across Tunisia.",
+    ],
+  },
+
   // ─── Skills ──────────────────────────────────────────────────────────────
   {
     id: 'skills',
@@ -143,13 +156,26 @@ export const intents: Intent[] = [
   // ─── DevOps / Infra ──────────────────────────────────────────────────────
   {
     id: 'devops',
-    patterns: ['devops', 'kubernetes', 'k8s', 'openstack', 'docker', 'linux', 'cloud', 'deploy', 'infra', 'infrastructure', 'container', 'cluster', 'server', 'ops', 'pipeline', 'vm', 'orchestration'],
+    patterns: ['devops', 'kubernetes', 'k8s', 'openstack', 'docker', 'linux', 'cloud', 'deploy', 'infra', 'infrastructure', 'container', 'cluster', 'server', 'ops', 'pipeline', 'vm', 'orchestration', 'gitlab', 'ci/cd', 'runner', 'ansible', 'heat', 'prometheus', 'grafana', 'monitoring', 'calico', 'neutron', 'nova', 'cinder'],
     responses: [
-      "She's deployed a Kubernetes cluster on self-hosted OpenStack — not tutorial-level stuff. Runs Linux daily, deeply into infrastructure and cloud. DevOps is where she's heading.",
-      "Docker, Kubernetes on OpenStack, Linux as her main OS. She actually set up the OpenStack environment herself and deployed k8s on it. The kind of thing most devs only read about.",
+      "She built a full private cloud from scratch: 6+ node OpenStack (Epoxy) cluster, then automated Kubernetes provisioning on top using Heat and Ansible. Also set up GitLab CI/CD on a self-hosted runner at a fintech internship. Linux daily driver. This is not 'I did a Docker tutorial'.",
+      "Two layers of real DevOps: (1) Private cloud — multi-node OpenStack + k8s automated with Heat (IaC) + Ansible, Calico CNI, Prometheus + Grafana monitoring stack. (2) CI/CD pipeline for Prospecti at Enda Tamweel — build and test stages for Spring Boot and React Native on a self-hosted GitLab runner.",
     ],
     followUp: [
-      "The OpenStack + Kubernetes setup is genuinely non-trivial. OpenStack is what big cloud providers run under the hood — spinning up your own instance and then running a k8s cluster on top of it means touching networking, storage, identity management, and orchestration. She did this as a project because she wanted to understand cloud from the ground up, not just use it as a black box.",
+      "The private cloud project is the deep one: OpenStack Epoxy across 6+ nodes (Nova/Neutron/Cinder), Kubernetes fully provisioned via Heat templates and Ansible — zero manual steps after initial config. She hit a real CNI compatibility issue (Calico IPIP doesn't work over OpenStack's overlay) and fixed it by migrating to VXLAN tunneling. That's the kind of networking problem you only find by actually running it.",
+    ],
+  },
+
+  // ─── Private Cloud ───────────────────────────────────────────────────────
+  {
+    id: 'cloud_infra',
+    patterns: ['private cloud', 'openstack', 'epoxy', 'multi-node', 'nova', 'neutron', 'cinder', 'heat', 'ansible', 'calico', 'vxlan', 'ipip', 'cni', 'prometheus', 'grafana', 'monitoring', 'iac', 'orchestration', 'compute node', 'controller'],
+    responses: [
+      "The private cloud project: a full multi-node OpenStack (Epoxy) deployment across 6+ compute nodes + dedicated controller — Nova, Neutron, Cinder all configured from scratch. Kubernetes provisioning automated with Heat (IaC) and Ansible. Monitoring with Prometheus + Grafana. Not a lab exercise.",
+      "She designed and deployed a production-grade private cloud: OpenStack Epoxy managing compute, networking, and storage across 6+ nodes. K8s cluster brought up automatically via Heat templates + Ansible playbooks. Hit a real CNI bug (Calico IPIP incompatible with OpenStack overlay) and resolved it by migrating to VXLAN. Then deployed Spring Boot + Angular + MySQL on top and wired up full observability with Prometheus and Grafana.",
+    ],
+    followUp: [
+      "The Calico fix is the most interesting part technically: Calico's default IPIP encapsulation conflicts with OpenStack's own overlay networking, causing pod-to-pod traffic to fail across nodes. Diagnosing that, understanding why, and migrating to VXLAN tunneling mode is not something you figure out from a tutorial — you have to understand both the k8s networking model and OpenStack's Neutron layer. She did.",
     ],
   },
 
@@ -339,12 +365,12 @@ export const intents: Intent[] = [
     id: 'hire_pitch',
     patterns: ['hire', 'special', 'unique', 'different', 'strengths', 'outstanding', 'recruit', 'stand', 'distinguishes', 'remarkable', 'impressive', 'choose', 'pick'],
     responses: [
-      "A few things that actually stand out: she's deployed a real Kubernetes cluster on self-hosted OpenStack (not a tutorial), built a WCAG-compliant app in collaboration with an accessibility NGO, integrated BERT for NLP in a mobile app, and built this chatbot from scratch instead of dropping in a widget. She ships real things.",
-      "Honestly? She doesn't just follow tutorials — she builds things that run in production. Two internships at the same bank (they called her back), an accessible banking app that improved scores by 20%, a k8s cluster on OpenStack, and a from-scratch NLP chatbot on her portfolio. She's a student who already thinks like an engineer.",
-      "She's cross-stack (MERN, React Native, Spring Boot, Java, PHP), she's done real DevOps beyond 'I ran Docker once', and she cares about accessibility and impact — not just shipping features. Also she builds chatbots from scratch for her portfolio instead of using ready-made tools. That last one should tell you something.",
+      "A few things that actually stand out: she built a 6-node private cloud from scratch (OpenStack + automated k8s + Prometheus/Grafana), set up GitLab CI/CD at a fintech internship, built a WCAG-compliant app with an accessibility NGO, integrated BERT for NLP in a mobile app, and built this chatbot without any API. She ships real things.",
+      "Honestly? Three internships, five projects, and a private cloud running on her own hardware. Attijari Bank called her back for a harder project. At Enda Tamweel she built the app AND the CI/CD pipeline. She's a student who already thinks like an engineer.",
+      "She's cross-stack (MERN, React Native, Spring Boot, Java, PHP) AND she's done real infrastructure work: multi-node OpenStack, Kubernetes IaC with Heat + Ansible, CNI debugging, observability pipelines. That combination — full-stack dev + cloud architecture — is rare at her level.",
     ],
     followUp: [
-      "The clearest signal: she was invited back for a second internship at Attijari Bank with a harder project. She went from MERN web developer to building a BERT-powered accessible mobile banking app. That's not a lateral move — that's growth.",
+      "The clearest signal: her projects get harder every time. MERN dashboard → accessible mobile app with BERT → location-based fintech app + CI/CD pipeline → full private cloud with IaC and monitoring. That's not a student padding a resume — that's someone who keeps raising the bar on purpose.",
     ],
   },
 

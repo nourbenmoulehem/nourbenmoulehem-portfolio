@@ -5,6 +5,8 @@ import { motion } from "motion/react";
 import projectImage from "@/assets/images/projects/1.png";
 import projectImage2 from "@/assets/images/projects/2.png";
 import projectImage3 from "@/assets/images/projects/3.png";
+import projectImage4 from "@/assets/images/projects/4.jpg";
+import projectImageCloud from "@/assets/images/projects/arch-logique.drawio.jpg";
 
 import { StaticImageData } from "next/image"; 
 
@@ -58,7 +60,31 @@ const projects: Project[] = [
     codeLink: "https://github.com/nourbenmoulehem/AssistiveBanking-RN",
     isMobile: true,
   },
-  
+  {
+    id: 4,
+    title: "Prospecti - Field Prospecting App",
+    description:
+      "A mobile app built during my internship at Enda Tamweel (Jul–Aug 2025) that helps portfolio managers find and track potential clients using location-based features. Improved the mobile UX so agents can add prospects and capture GPS location on the go, replacing a paper-based process. Built features across the full stack, set up a GitLab CI/CD pipeline with build and test stages running on a self-hosted runner, automating the full build and test process for both Spring Boot and React Native. Worked in an Agile environment with sprint planning, code reviews, and iterative delivery.",
+    image: projectImage4,
+    color: "bg-card",
+    techUsed: ["React Native", "Spring Boot", "React Admin", "GitLab CI/CD", "GPS"],
+    demoLink: "",
+    codeLink: "",
+    isMobile: true,
+  },
+  {
+    id: 5,
+    title: "Private Cloud Infrastructure",
+    description:
+      "Designed and deployed a production-grade, multi-node private cloud from the ground up. Deployed a multi-node OpenStack (Epoxy) private cloud across 6+ compute nodes with a dedicated controller, managing compute, networking, and storage via Nova, Neutron, and Cinder. Automated full Kubernetes cluster provisioning using Heat (IaC) and Ansible — zero manual setup after initial configuration. Resolved a complex CNI networking challenge by migrating Calico from IPIP to VXLAN tunneling mode for full OpenStack compatibility. Deployed a complete application stack (Spring Boot, Angular, MySQL) and built an end-to-end monitoring pipeline with Prometheus and Grafana.",
+    image: projectImageCloud,
+    color: "bg-card",
+    techUsed: ["OpenStack", "Kubernetes", "Ansible", "Heat (IaC)", "Calico", "Prometheus", "Grafana"],
+    demoLink: "",
+    codeLink: "",
+    isMobile: false,
+  },
+
 ];
 
 const ProjectSection: React.FC = () => {

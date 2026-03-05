@@ -30,6 +30,11 @@ const internshipData: InternshipEntry[] = [
     position: "Mobile developer, end-of-studies internship",
     duration: "February 2024 - May 2024",
   },
+  {
+    company: "Enda Tamweel",
+    position: "Software Engineering Intern — Prospecti mobile app (React Native · Spring Boot · GitLab CI/CD)",
+    duration: "July 2025 - August 2025",
+  },
 ];
 
 const About: React.FC = () => (
@@ -78,10 +83,14 @@ const About: React.FC = () => (
         privilege of developing a mobile banking app with accessibility features
         for visually impaired users. Seeing the app in action, helping users
         navigate their financial tasks independently, was an unforgettable
-        moment that reaffirmed why I chose this path. Now, as I continue my
-        studies at ESPRIT, I'm diving deeper into DevOps, machine learning, and
-        cloud computing. I'm looking for the next challenge that will allow me
-        to build meaningful solutions that truly make a difference.
+        moment that reaffirmed why I chose this path. More recently, at Enda
+        Tamweel, I built Prospecti — a field prospecting app replacing a
+        paper-based process with GPS-based tracking — and set up the full
+        GitLab CI/CD pipeline from scratch. Now, as I continue my studies at
+        ESPRIT, I'm diving deeper into DevOps and cloud architecture, having
+        already deployed a production-grade private cloud on OpenStack with
+        Kubernetes, Ansible, and full observability. Always looking for the next
+        challenge that pushes things further.
       </motion.p>
     </motion.div>
 
@@ -92,7 +101,7 @@ const About: React.FC = () => (
         </RenderModel>
       </div> */}
 
-    <section className="flex flex-col lg:flex-row  justify-evenly items-center w-full px-4">
+    <section className="flex flex-col items-center w-full px-4">
       {/* Education Section */}
       <section className="py-12 w-full flex flex-col items-center">
         <motion.h2

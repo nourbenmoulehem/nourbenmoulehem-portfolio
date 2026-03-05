@@ -4,7 +4,7 @@
 
 import Hero from "./sections/hero";
 import About from "./sections/about/About";
-
+import Skills from "./sections/skills/Skills";
 import ContactForm from "./sections/contact/Contact";
 import ProjectSection from "./sections/projects/ProjectsV2";
 
@@ -28,15 +28,15 @@ export default function Home() {
           {/* <AboutV2 /> */}
         </section>
 
-        {/* Section 3 - Projects */}
-        <section id="projects" >
-          {/* <Projects /> */}
-          <ProjectSection />
+        {/* Section 3 - Skills */}
+        <section id="skills">
+          <Skills />
         </section>
 
-        {/* <Section  id="skills">
-          <Tech />
-          </Section> */}
+        {/* Section 4 - Projects */}
+        <section id="projects">
+          <ProjectSection />
+        </section>
 
         {/* Section 4 - Contact */}
         <section id="contacts" className="contacts">

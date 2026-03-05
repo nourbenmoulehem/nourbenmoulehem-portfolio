@@ -107,7 +107,7 @@ const Card: React.FC<CardProps> = ({
         <div
           className="sm:basis-[55%] relative overflow-hidden flex items-center justify-center flex-shrink-0"
           style={{
-            minHeight: project.isMobile ? "18rem" : "14rem",
+            minHeight: project.isMobile ? "26rem" : "14rem",
             background: "rgba(0,0,0,0.22)",
           }}
         >
@@ -116,8 +116,8 @@ const Card: React.FC<CardProps> = ({
             <div
               className="relative z-10 rounded-[26px] overflow-hidden"
               style={{
-                width: 175,
-                height: 340,
+                width: 220,
+                height: 420,
                 border: "2px solid rgba(255,255,255,0.18)",
                 boxShadow:
                   "0 16px 48px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.05)",

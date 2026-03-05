@@ -94,6 +94,12 @@ const Card: React.FC<CardProps> = ({
             "0 24px 64px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.09)",
         }}
       >
+        {/* On mobile: solid background so previous cards don't bleed through the glass */}
+        <div
+          className="absolute inset-0 rounded-2xl sm:hidden"
+          style={{ background: "var(--background)", opacity: 0.93 }}
+        />
+
         {/* Top gradient accent line */}
         <div
           className="absolute top-0 left-0 right-0 h-[2px] z-10 rounded-t-2xl"
@@ -103,24 +109,20 @@ const Card: React.FC<CardProps> = ({
           }}
         />
 
-        {/* ── Left: Image — fills full height ── */}
+        {/* ── Left: Image ── */}
         <div
-          className="sm:basis-[55%] relative overflow-hidden flex items-center justify-center flex-shrink-0"
+          className="sm:basis-[55%] relative overflow-hidden flex items-center justify-center flex-shrink-0 z-10"
           style={{
-            minHeight: project.isMobile ? "26rem" : "14rem",
+            minHeight: project.isMobile ? "16rem" : "12rem",
             background: "rgba(0,0,0,0.22)",
           }}
         >
           {project.isMobile ? (
-            /* Phone mockup — sized to be comfortably visible */
             <div
-              className="relative z-10 rounded-[26px] overflow-hidden"
+              className="relative z-10 rounded-[26px] overflow-hidden w-[140px] h-[260px] sm:w-[240px] sm:h-[460px]"
               style={{
-                width: 220,
-                height: 420,
                 border: "2px solid rgba(255,255,255,0.18)",
-                boxShadow:
-                  "0 16px 48px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.05)",
+                boxShadow: "0 16px 48px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.05)",
               }}
             >
               <Image
@@ -131,7 +133,6 @@ const Card: React.FC<CardProps> = ({
               />
             </div>
           ) : (
-            /* Desktop screenshot — full image, no cropping */
             <Image
               src={project.image}
               fill
@@ -140,7 +141,6 @@ const Card: React.FC<CardProps> = ({
             />
           )}
 
-          {/* Watermark number */}
           <span
             className="absolute top-3 left-4 text-7xl font-black select-none pointer-events-none z-10"
             style={{ color: "var(--primary)", opacity: 0.09, lineHeight: 1 }}
@@ -148,29 +148,23 @@ const Card: React.FC<CardProps> = ({
             {num}
           </span>
 
-          {/* Right edge fade — softens the transition to content */}
           <div
             className="absolute top-0 right-0 bottom-0 w-12 hidden sm:block"
-            style={{
-              background:
-                "linear-gradient(to right, transparent, rgba(0,0,0,0.18))",
-            }}
+            style={{ background: "linear-gradient(to right, transparent, rgba(0,0,0,0.18))" }}
           />
         </div>
 
         {/* ── Right: Content ── */}
         <div
-          className="sm:basis-[45%] flex flex-col p-6 gap-4 justify-between"
+          className="sm:basis-[45%] flex flex-col p-6 gap-4 justify-between relative z-10"
           style={{ borderLeft: "1px solid rgba(255,255,255,0.07)" }}
         >
           <div className="flex flex-col gap-3">
-            {/* Counter + Title */}
             <div>
               <span
                 className="text-xs font-semibold uppercase tracking-widest"
                 style={{
-                  background:
-                    "linear-gradient(90deg, var(--primary), var(--secondary))",
+                  background: "linear-gradient(90deg, var(--primary), var(--secondary))",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -185,24 +179,20 @@ const Card: React.FC<CardProps> = ({
               </h2>
             </div>
 
-            {/* Description */}
             <p
-              className="text-sm leading-relaxed line-clamp-6"
+              className="text-sm leading-relaxed line-clamp-4 sm:line-clamp-6"
               style={{ color: "var(--text)", opacity: 0.72 }}
             >
               {project.description}
             </p>
 
-            {/* Divider */}
             <div
               style={{
                 height: "1px",
-                background:
-                  "linear-gradient(90deg, rgba(255,255,255,0.12), transparent)",
+                background: "linear-gradient(90deg, rgba(255,255,255,0.12), transparent)",
               }}
             />
 
-            {/* Tech badges */}
             <div className="flex flex-wrap gap-1.5">
               {project.techUsed.map((tech) => (
                 <Badge
@@ -220,7 +210,6 @@ const Card: React.FC<CardProps> = ({
             </div>
           </div>
 
-          {/* Code button */}
           {project.codeLink && (
             <div className="mt-auto pt-2">
               <Link href={project.codeLink} target="_blank">
@@ -232,12 +221,10 @@ const Card: React.FC<CardProps> = ({
                     color: "var(--text)",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.background =
-                      "rgba(255,255,255,0.14)";
+                    (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.14)";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.background =
-                      "rgba(255,255,255,0.07)";
+                    (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.07)";
                   }}
                 >
                   <Code size={14} />

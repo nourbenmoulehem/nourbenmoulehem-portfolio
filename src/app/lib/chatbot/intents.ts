@@ -78,7 +78,7 @@ export const intents: Intent[] = [
   // ─── Projects overview ───────────────────────────────────────────────────
   {
     id: 'projects',
-    patterns: ['project', 'built', 'portfolio', 'made', 'created', 'developed', 'application', 'app', 'réalisations', 'projets'],
+    patterns: ['project', 'projects', 'built', 'portfolio', 'made', 'created', 'developed', 'application', 'app', 'apps', 'réalisations', 'projets'],
     responses: [
       "Five projects: WeBank Monitoring (MERN dashboard), Inclusa (e-learning for deaf users with sign language detection), WeBank Mobile (accessible React Native banking app with BERT), Prospecti (location-based prospecting app for Enda Tamweel), and a full private cloud built from scratch on OpenStack + Kubernetes. Each one harder than the last.",
       "The hits: (1) WeBank Monitoring — MERN, JWT, real-time chat. (2) Inclusa — accessible e-learning with ML sign language detection. (3) WeBank Mobile — WCAG-compliant, BERT-powered, 20% accessibility improvement. (4) Prospecti — React Native + Spring Boot + GitLab CI/CD. (5) Private Cloud — 6-node OpenStack + automated k8s + Prometheus/Grafana. Not bad for a student.",
@@ -143,7 +143,7 @@ export const intents: Intent[] = [
   // ─── Skills ──────────────────────────────────────────────────────────────
   {
     id: 'skills',
-    patterns: ['skill', 'tech', 'stack', 'language', 'framework', 'tool', 'technologies', 'familiar', 'proficient', 'expertise', 'programming', 'code', 'compétences', 'react', 'node', 'typescript', 'java'],
+    patterns: ['skill', 'skills', 'tech', 'stack', 'framework', 'tool', 'technologies', 'familiar', 'proficient', 'expertise', 'programming', 'code', 'compétences', 'react', 'node', 'typescript', 'java'],
     responses: [
       "Web: React, Node.js, Express, MongoDB (full MERN). Mobile: React Native + Spring Boot. Also Java/JavaFX, Symfony/PHP, PostgreSQL, MySQL. Infrastructure: Docker, Kubernetes, OpenStack, Linux. And enough TypeScript to be dangerous.",
       "Full-stack web (MERN), mobile (React Native), some Java and PHP for variety, and hands-on DevOps — Docker, k8s on OpenStack, Linux daily. She picks up whatever the project needs.",
@@ -238,7 +238,7 @@ export const intents: Intent[] = [
   // ─── Languages spoken ────────────────────────────────────────────────────
   {
     id: 'languages',
-    patterns: ['speak', 'spoken', 'arabic', 'french', 'english', 'langue', 'parle', 'arabe', 'anglais', 'français'],
+    patterns: ['speak', 'spoken', 'speaks', 'language', 'languages', 'arabic', 'french', 'english', 'multilingual', 'fluent', 'langue', 'parle', 'arabe', 'anglais', 'français'],
     responses: [
       "Arabic (native), French (fluent), English (professional). Three languages, one developer.",
       "She speaks Arabic, French, and English. So she can read your error messages, Stack Overflow answers, and LinkedIn messages without Google Translate.",

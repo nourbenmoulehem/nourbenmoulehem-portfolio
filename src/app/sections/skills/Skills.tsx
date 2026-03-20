@@ -88,7 +88,7 @@ const skillCategories: SkillCategory[] = [
     title: "ML Integration",
     skills: [
       { name: "BERT / NLP", icon: FaBrain, color: "#f472b6" },
-      { name: "Sign Language AI", icon: FaBrain, color: "#818cf8" },
+      { name: "RAG", icon: FaBrain, color: "#818cf8" },
     ],
   },
   {

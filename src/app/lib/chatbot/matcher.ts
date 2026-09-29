@@ -50,6 +50,7 @@ const RAW_LOCATION_PHRASES = [
 const KEYWORD_SHORTCUTS: Record<string, string> = {
   // Projects
   project: 'projects', projects: 'projects', apps: 'projects',
+  talon: 'talon', altair: 'talon', agents: 'talon', mcp: 'talon', proxmox: 'talon',
   // Skills
   skill: 'skills', skills: 'skills', stack: 'skills', technologies: 'skills',
   // Education

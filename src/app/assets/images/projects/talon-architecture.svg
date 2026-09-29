@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 610" font-family="Inter, 'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0733"/>
+      <stop offset="1" stop-color="#150b3d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5b74e0"/>
+      <stop offset="1" stop-color="#db8ada"/>
+    </linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#ffffff" opacity="0.06"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9aa6e8"/>
+    </marker>
+    <style>
+      .box { fill: rgba(255,255,255,0.045); stroke: rgba(255,255,255,0.16); stroke-width: 1.2; }
+      .hot { fill: rgba(91,116,224,0.10); stroke: url(#accent); stroke-width: 2; }
+      .title { fill: #eef0fb; font-weight: 700; font-size: 21px; }
+      .sm-title { fill: #eef0fb; font-weight: 700; font-size: 16px; }
+      .sub { fill: #aab2d8; font-size: 14px; }
+      .tiny { fill: #aab2d8; font-size: 12.5px; }
+      .label { fill: #db8ada; font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+      .edge { stroke: #9aa6e8; stroke-width: 1.8; fill: none; marker-end: url(#arrow); }
+      .edge-label { fill: #c9cff0; font-size: 12.5px; font-style: italic; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="610" rx="22" fill="url(#bg)"/>
+  <rect width="1000" height="610" rx="22" fill="url(#dots)"/>
+
+  <!-- Channels -->
+  <text x="24" y="132" class="label">CHANNELS</text>
+  <g>
+    <rect x="24" y="148" width="130" height="44" rx="22" class="box"/>
+    <text x="89" y="176" text-anchor="middle" class="sm-title">Slack</text>
+    <rect x="24" y="208" width="130" height="44" rx="22" class="box"/>
+    <text x="89" y="236" text-anchor="middle" class="sm-title">Telegram</text>
+    <rect x="24" y="268" width="130" height="44" rx="22" class="box"/>
+    <text x="89" y="296" text-anchor="middle" class="sm-title">Web UI</text>
+  </g>
+  <path d="M154 230 H200" class="edge"/>
+
+  <!-- k3s cluster boundary -->
+  <rect x="180" y="84" width="592" height="398" rx="16" fill="none" stroke="#5b74e0" stroke-opacity="0.55" stroke-width="1.5" stroke-dasharray="7 6"/>
+  <text x="200" y="110" class="label">K3S CLUSTER</text>
+
+  <!-- Host -->
+  <rect x="205" y="140" width="195" height="180" rx="14" class="hot"/>
+  <text x="225" y="176" class="title">Host</text>
+  <text x="225" y="208" class="sub">router · access gates</text>
+  <text x="225" y="232" class="sub">sweep · delivery</text>
+  <text x="225" y="256" class="sub">admin REST API</text>
+  <rect x="222" y="274" width="160" height="30" rx="8" fill="rgba(219,138,218,0.14)" stroke="#db8ada" stroke-opacity="0.6"/>
+  <text x="302" y="294" text-anchor="middle" fill="#f3c9f2" font-size="13.5" font-weight="700">K8sJobBackend</text>
+
+  <!-- Host -> agents -->
+  <path d="M400 230 H464" class="edge"/>
+  <text x="432" y="220" text-anchor="middle" class="edge-label">Job</text>
+
+  <!-- Agent jobs (stacked) -->
+  <rect x="498" y="112" width="195" height="180" rx="14" class="box" opacity="0.45"/>
+  <rect x="484" y="126" width="195" height="180" rx="14" class="box" opacity="0.7"/>
+  <rect x="470" y="140" width="195" height="180" rx="14" class="hot"/>
+  <text x="490" y="176" class="title">Agent pod</text>
+  <text x="490" y="208" class="sub">one Job / conversation</text>
+  <text x="490" y="232" class="sub">MCP tool registry</text>
+  <text x="490" y="256" class="sub">idle-exit · deadline</text>
+  <text x="490" y="290" class="tiny">non-root · no DinD</text>
+
+  <!-- Data row -->
+  <rect x="205" y="372" width="132" height="90" rx="12" class="box"/>
+  <text x="271" y="400" text-anchor="middle" class="sm-title">PostgreSQL</text>
+  <text x="271" y="424" text-anchor="middle" class="tiny">central + session</text>
+  <text x="271" y="442" text-anchor="middle" class="tiny">least-priv role</text>
+
+  <rect x="346" y="372" width="132" height="90" rx="12" class="box"/>
+  <text x="412" y="400" text-anchor="middle" class="sm-title">Redis · Celery</text>
+  <text x="412" y="424" text-anchor="middle" class="tiny">beat scheduler</text>
+  <text x="412" y="442" text-anchor="middle" class="tiny">cluster monitor</text>
+
+  <rect x="487" y="372" width="132" height="90" rx="12" class="box"/>
+  <text x="553" y="400" text-anchor="middle" class="sm-title">Qdrant · TEI</text>
+  <text x="553" y="424" text-anchor="middle" class="tiny">knowledge base</text>
+  <text x="553" y="442" text-anchor="middle" class="tiny">local embeddings</text>
+
+  <rect x="628" y="372" width="132" height="90" rx="12" class="box"/>
+  <text x="694" y="400" text-anchor="middle" class="sm-title">Observability</text>
+  <text x="694" y="424" text-anchor="middle" class="tiny">Prometheus</text>
+  <text x="694" y="442" text-anchor="middle" class="tiny">Grafana · Loki · Tempo</text>
+
+  <path d="M271 320 V366" class="edge"/>
+  <path d="M553 320 V366" class="edge"/>
+
+  <!-- External targets -->
+  <text x="800" y="132" class="label">TARGETS</text>
+  <rect x="800" y="140" width="176" height="118" rx="14" class="box"/>
+  <text x="818" y="174" class="title">Proxmox VE</text>
+  <text x="818" y="204" class="sub">Terraform · Ansible</text>
+  <text x="818" y="228" class="sub">HITL approval cards</text>
+
+  <rect x="800" y="276" width="176" height="92" rx="14" class="box"/>
+  <text x="818" y="310" class="title">LLM drivers</text>
+  <text x="818" y="340" class="sub">GLM · Claude · local</text>
+
+  <path d="M693 200 H794" class="edge"/>
+  <path d="M665 300 C730 300 740 322 794 322" class="edge"/>
+
+  <!-- CI/CD strip -->
+  <text x="24" y="512" class="label">CI/CD · GITEA ACTIONS</text>
+  <g>
+    <rect x="24" y="526" width="214" height="52" rx="12" class="box"/>
+    <text x="131" y="558" text-anchor="middle" class="sm-title">ruff · mypy strict</text>
+    <path d="M238 552 H266" class="edge"/>
+    <rect x="270" y="526" width="214" height="52" rx="12" class="box"/>
+    <text x="377" y="558" text-anchor="middle" class="sm-title">pytest + Postgres</text>
+    <path d="M484 552 H512" class="edge"/>
+    <rect x="516" y="526" width="214" height="52" rx="12" class="box"/>
+    <text x="623" y="558" text-anchor="middle" class="sm-title">BuildKit → registry</text>
+    <path d="M730 552 H758" class="edge"/>
+    <rect x="762" y="526" width="214" height="52" rx="12" class="hot"/>
+    <text x="869" y="558" text-anchor="middle" class="sm-title">auto-deploy to k3s</text>
+  </g>
+</svg>

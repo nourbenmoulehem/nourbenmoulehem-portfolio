@@ -44,7 +44,7 @@ export const intents: Intent[] = [
       "That's Nour. Developer, engineering student, Linux nerd, and apparently someone who builds chatbots for her portfolio instead of just putting her picture there.",
     ],
     followUp: [
-      "She's based in Tunisia, currently at ESPRIT for Software Engineering. Before that she did a CS Bachelor's at ISTIC. Three internships (Attijari Bank twice, Enda Tamweel), five real projects including a full private cloud from scratch, one 3D gaming PC in the contact form.",
+      "She's based in Tunisia, currently at ESPRIT for Software Engineering. Before that she did a CS Bachelor's at ISTIC. Three internships (Attijari Bank twice, Enda Tamweel), six real projects including a full private cloud from scratch and a Kubernetes-native AI agent platform, one 3D gaming PC in the contact form.",
       "Beyond the resume stuff — she's into DevOps, gaming, and figuring out how things work at the infrastructure level. The kind of developer who reads release notes for fun.",
     ],
   },
@@ -80,11 +80,11 @@ export const intents: Intent[] = [
     id: 'projects',
     patterns: ['project', 'projects', 'built', 'portfolio', 'made', 'created', 'developed', 'application', 'app', 'apps', 'réalisations', 'projets'],
     responses: [
-      "Five projects: WeBank Monitoring (MERN dashboard), Inclusa (e-learning for deaf users with sign language detection), WeBank Mobile (accessible React Native banking app with BERT), Prospecti (location-based prospecting app for Enda Tamweel), and a full private cloud built from scratch on OpenStack + Kubernetes. Each one harder than the last.",
-      "The hits: (1) WeBank Monitoring — MERN, JWT, real-time chat. (2) Inclusa — accessible e-learning with ML sign language detection. (3) WeBank Mobile — WCAG-compliant, BERT-powered, 20% accessibility improvement. (4) Prospecti — React Native + Spring Boot + GitLab CI/CD. (5) Private Cloud — 6-node OpenStack + automated k8s + Prometheus/Grafana. Not bad for a student.",
+      "Six projects: WeBank Monitoring (MERN dashboard), Inclusa (e-learning for deaf users with sign language detection), WeBank Mobile (accessible React Native banking app with BERT), Prospecti (location-based prospecting app for Enda Tamweel), a full private cloud built from scratch on OpenStack + Kubernetes, and Altair Talon (a self-hosted AI agent platform she moved onto Kubernetes). Each one harder than the last.",
+      "The hits: (1) WeBank Monitoring — MERN, JWT, real-time chat. (2) Inclusa — accessible e-learning with ML sign language detection. (3) WeBank Mobile — WCAG-compliant, BERT-powered, 20% accessibility improvement. (4) Prospecti — React Native + Spring Boot + GitLab CI/CD. (5) Private Cloud — 6-node OpenStack + automated k8s + Prometheus/Grafana. (6) Altair Talon — AI agents as Kubernetes Jobs, Postgres, Proxmox ops agent, full CI/CD. Not bad for a student.",
     ],
     followUp: [
-      "If you want details on a specific one, just ask! WeBank (web), Inclusa, WeBank Mobile, Prospecti, or the private cloud — each has a different tech story.",
+      "If you want details on a specific one, just ask! WeBank (web), Inclusa, WeBank Mobile, Prospecti, the private cloud, or Talon — each has a different tech story.",
     ],
   },
 
@@ -176,6 +176,20 @@ export const intents: Intent[] = [
     ],
     followUp: [
       "The Calico fix is the most interesting part technically: Calico's default IPIP encapsulation conflicts with OpenStack's own overlay networking, causing pod-to-pod traffic to fail across nodes. Diagnosing that, understanding why, and migrating to VXLAN tunneling mode is not something you figure out from a tutorial — you have to understand both the k8s networking model and OpenStack's Neutron layer. She did.",
+    ],
+  },
+
+  // ─── Altair Talon ────────────────────────────────────────────────────────
+  {
+    id: 'talon',
+    patterns: ['talon', 'altair', 'agent', 'agents', 'agentic', 'llm', 'mcp', 'proxmox', 'terraform', 'slack', 'qdrant', 'celery', 'redis', 'k3s', 'python', 'gitea', 'loki', 'tempo', 'hitl', 'approval'],
+    responses: [
+      "Altair Talon is a self-hosted AI agent platform: messages come in from Slack, Telegram or a web UI, and every conversation gets its own sandboxed agent. Nour co-built it (~100 commits, +31k lines) and took it from Docker on one box to Kubernetes, where each agent runs as a native Job with RBAC, NetworkPolicies and no privileged sidecar.",
+      "Talon is where she went full platform engineer: a Kubernetes backend that runs AI agents as k8s Jobs, a SQLite → PostgreSQL migration with a least-privilege DB role, a Proxmox ops agent with Terraform + Ansible behind human approval cards, a Slack adapter, a Qdrant knowledge base, and a Gitea Actions pipeline that auto-deploys the whole thing.",
+    ],
+    followUp: [
+      "The security story is the fun part: agents run as non-root pods with idle-exit and hard deadlines, and the container never gets the superuser database DSN. She wrote a migration that provisions a scoped `talon_runner` Postgres role and rewrites the DSN at spawn, so even an escaped container can't read identity or cost tables. Infra changes on Proxmox go through human-in-the-loop approval cards before Terraform or Ansible touches anything.",
+      "On the ops side: Gitea Actions runs ruff, strict mypy, and pytest against a real Postgres service, builds host, agent and frontend images with BuildKit into an in-cluster registry, then auto-deploys, including Prometheus, Grafana, Loki and Tempo for metrics, logs and traces. She also shipped local TEI embeddings (e5-small) so the knowledge base doesn't need a cloud API.",
     ],
   },
 
@@ -335,7 +349,7 @@ export const intents: Intent[] = [
     patterns: ['age', 'old', 'born', 'year', 'young'],
     responses: [
       "She started her CS Bachelor's in 2022, so do the math. Young enough to stay up debugging until 3am, experienced enough to not enjoy it.",
-      "Young — and already has two internships, three projects, and a k8s cluster to show for it.",
+      "Young — and already has three internships, six projects, and a k8s cluster to show for it.",
     ],
   },
 
@@ -366,11 +380,11 @@ export const intents: Intent[] = [
     patterns: ['hire', 'special', 'unique', 'different', 'strengths', 'outstanding', 'recruit', 'stand', 'distinguishes', 'remarkable', 'impressive', 'choose', 'pick'],
     responses: [
       "A few things that actually stand out: she built a 6-node private cloud from scratch (OpenStack + automated k8s + Prometheus/Grafana), set up GitLab CI/CD at a fintech internship, built a WCAG-compliant app with an accessibility NGO, integrated BERT for NLP in a mobile app, and built this chatbot without any API. She ships real things.",
-      "Honestly? Three internships, five projects, and a private cloud running on her own hardware. Attijari Bank called her back for a harder project. At Enda Tamweel she built the app AND the CI/CD pipeline. She's a student who already thinks like an engineer.",
+      "Honestly? Three internships, six projects, a private cloud running on her own hardware, and an AI agent platform she took to Kubernetes. Attijari Bank called her back for a harder project. At Enda Tamweel she built the app AND the CI/CD pipeline. She's a student who already thinks like an engineer.",
       "She's cross-stack (MERN, React Native, Spring Boot, Java, PHP) AND she's done real infrastructure work: multi-node OpenStack, Kubernetes IaC with Heat + Ansible, CNI debugging, observability pipelines. That combination — full-stack dev + cloud architecture — is rare at her level.",
     ],
     followUp: [
-      "The clearest signal: her projects get harder every time. MERN dashboard → accessible mobile app with BERT → location-based fintech app + CI/CD pipeline → full private cloud with IaC and monitoring. That's not a student padding a resume — that's someone who keeps raising the bar on purpose.",
+      "The clearest signal: her projects get harder every time. MERN dashboard → accessible mobile app with BERT → location-based fintech app + CI/CD pipeline → full private cloud with IaC and monitoring → a Kubernetes-native AI agent platform with CI/CD and observability. That's not a student padding a resume — that's someone who keeps raising the bar on purpose.",
     ],
   },
 

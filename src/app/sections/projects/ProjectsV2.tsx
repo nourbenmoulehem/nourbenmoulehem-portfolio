@@ -7,6 +7,7 @@ import projectImage2 from "@/assets/images/projects/2.png";
 import projectImage3 from "@/assets/images/projects/3.png";
 import projectImage4 from "@/assets/images/projects/4.jpg";
 import projectImageCloud from "@/assets/images/projects/arch-logique.drawio.jpg";
+import projectImageTalon from "@/assets/images/projects/talon-architecture.svg";
 
 import { StaticImageData } from "next/image"; 
 
@@ -80,6 +81,18 @@ const projects: Project[] = [
     image: projectImageCloud,
     color: "bg-card",
     techUsed: ["OpenStack", "Kubernetes", "Ansible", "Heat (IaC)", "Calico", "Prometheus", "Grafana"],
+    demoLink: "",
+    codeLink: "",
+    isMobile: false,
+  },
+  {
+    id: 6,
+    title: "Altair Talon - Agentic AI Ops Platform",
+    description:
+      "Co-built a self-hosted, multi-channel AI agent platform (~100 commits, +31k lines) where every conversation runs as its own sandboxed agent. I took it from Docker on a single host to Kubernetes: designed a pluggable ContainerBackend seam and a K8sJobBackend that runs each agent as a native Job, removing the privileged Docker-in-Docker sidecar. I also added RBAC and NetworkPolicies, separated CPU/memory requests from limits, and made agent pods non-root with idle-exit and deadline hardening. I migrated the data layer from SQLite to PostgreSQL and added a least-privilege runner role so a compromised container cannot read identity or cost data. I built a Proxmox operations agent: MCP tools for VMs, snapshots, backups and HA, Terraform and Ansible pipelines behind human-in-the-loop approval cards, and a cluster monitor with rule-based alerting and runbook RAG. I added a Slack adapter with cross-channel identity, a Qdrant knowledge base with local TEI embeddings, and a Gitea Actions pipeline (ruff, strict mypy, pytest on Postgres, BuildKit images) that auto-deploys the stack with Prometheus, Grafana, Loki and Tempo.",
+    image: projectImageTalon,
+    color: "bg-card",
+    techUsed: ["Python", "Kubernetes (k3s)", "PostgreSQL", "Celery + Redis", "Qdrant", "MCP", "Proxmox", "Terraform", "Ansible", "Gitea Actions", "Grafana / Loki"],
     demoLink: "",
     codeLink: "",
     isMobile: false,

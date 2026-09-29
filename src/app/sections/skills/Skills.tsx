@@ -11,8 +11,9 @@ import {
   SiApachecloudstack, SiKubernetes, SiDocker, SiAnsible, SiGitlab, SiLinux,
   SiPrometheus, SiGrafana,
   SiGit, SiNotion, SiThreedotjs, SiWebgl,
+  SiPython, SiRedis, SiTerraform, SiProxmox, SiCelery, SiGitea, SiSlack,
 } from "react-icons/si";
-import { FaServer, FaNetworkWired, FaBrain, FaFire } from "react-icons/fa";
+import { FaServer, FaNetworkWired, FaBrain, FaFire, FaRobot, FaVectorSquare } from "react-icons/fa";
 import { IconType } from "react-icons";
 
 interface Skill {
@@ -46,6 +47,8 @@ const skillCategories: SkillCategory[] = [
       { name: "Express", icon: SiExpress, color: "#ffffff" },
       { name: "Symfony", icon: SiSymfony, color: "#ffffff" },
       { name: "PHP", icon: SiPhp, color: "#777BB4" },
+      { name: "Python", icon: SiPython, color: "#3776AB" },
+      { name: "Celery", icon: SiCelery, color: "#37814A" },
       { name: "REST APIs", icon: FaServer, color: "#a78bfa" },
     ],
   },
@@ -62,6 +65,8 @@ const skillCategories: SkillCategory[] = [
       { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
       { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+      { name: "Redis", icon: SiRedis, color: "#FF4438" },
+      { name: "Qdrant", icon: FaVectorSquare, color: "#DC244C" },
     ],
   },
   {
@@ -72,7 +77,10 @@ const skillCategories: SkillCategory[] = [
       { name: "Docker", icon: SiDocker, color: "#2496ED" },
       { name: "Ansible", icon: SiAnsible, color: "#EE0000" },
       { name: "Heat / IaC", icon: FaFire, color: "#FF6B35" },
+      { name: "Terraform", icon: SiTerraform, color: "#844FBA" },
+      { name: "Proxmox", icon: SiProxmox, color: "#E57000" },
       { name: "GitLab CI/CD", icon: SiGitlab, color: "#FC6D26" },
+      { name: "Gitea Actions", icon: SiGitea, color: "#609926" },
       { name: "Linux", icon: SiLinux, color: "#FCC624" },
     ],
   },
@@ -81,12 +89,14 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Prometheus", icon: SiPrometheus, color: "#E6522C" },
       { name: "Grafana", icon: SiGrafana, color: "#F46800" },
+      { name: "Loki / Tempo", icon: SiGrafana, color: "#F2CC0C" },
       { name: "Calico / CNI", icon: FaNetworkWired, color: "#a78bfa" },
     ],
   },
   {
-    title: "ML Integration",
+    title: "AI & Agents",
     skills: [
+      { name: "LLM Agents / MCP", icon: FaRobot, color: "#db8ada" },
       { name: "BERT / NLP", icon: FaBrain, color: "#f472b6" },
       { name: "RAG", icon: FaBrain, color: "#818cf8" },
     ],
@@ -96,6 +106,7 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Git", icon: SiGit, color: "#F05032" },
       { name: "Notion", icon: SiNotion, color: "#ffffff" },
+      { name: "Slack API", icon: SiSlack, color: "#E01E5A" },
       { name: "Three.js", icon: SiThreedotjs, color: "#ffffff" },
       { name: "WebGL", icon: SiWebgl, color: "#990000" },
     ],

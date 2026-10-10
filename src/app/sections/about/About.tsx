@@ -21,9 +21,14 @@ const educationData: EducationEntry[] = [
 
 const internshipData: InternshipEntry[] = [
   {
-    company: "Attijari Bank",
-    position: "MERN developer, summer internship",
-    duration: "June 2023 - August 2023",
+    company: "Altair Technologies",
+    position: "DevOps / MLOps Intern — Cloud platform & LLM agent (Kubernetes · Proxmox · MCP · RAG · Terraform · Ansible)",
+    duration: "June 2026 - August 2026",
+  },
+  {
+    company: "Enda Tamweel",
+    position: "Software Engineering Intern — Prospecti mobile app (React Native · Spring Boot · GitLab CI/CD)",
+    duration: "July 2025 - August 2025",
   },
   {
     company: "Attijari Bank",
@@ -31,9 +36,9 @@ const internshipData: InternshipEntry[] = [
     duration: "February 2024 - May 2024",
   },
   {
-    company: "Enda Tamweel",
-    position: "Software Engineering Intern — Prospecti mobile app (React Native · Spring Boot · GitLab CI/CD)",
-    duration: "July 2025 - August 2025",
+    company: "Attijari Bank",
+    position: "MERN developer, summer internship",
+    duration: "June 2023 - August 2023",
   },
 ];
 
